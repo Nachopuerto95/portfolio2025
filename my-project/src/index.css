@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --font-inter: 'Inter', ui-sans-serif, system-ui;
+  --bg-color: rgb(15, 23, 42);
+  --font-color: rgb(213, 219, 230);
+  --font-color-2: rgb(141, 151, 170);
+  --mouse-gradient: rgba(31, 63, 122, 0.407);
+  --hover-color: rgb(94 234 212);
+
+}
+
+html {
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	font-feature-settings: "ss03","cv02","cv11";
+	font-variation-settings: "normal";
+	color: var(--font-color);
+	background-color: var(--bg-color);
+	font-family: var(--font-inter);
+}
+h1 {
+	font-family: var(--font-inter);
+	font-style: bold;
+	font-weight: 900;
+	font-size: 3rem;
+}
+
+.selected {
+	color: white;
+}
+.selected .menu-bar{
+	width: 3.5rem !important
+}
+
+.menu-bar {
+  border-bottom: 0.1rem solid;
+  width: 20px;
+  margin-bottom: 0.5rem;
+  transition: width 0.3s ease;
+}
+
+nav div:hover {
+  color: white;
+  opacity: 1;
+}
+
+nav div:hover .menu-bar {
+  width: 3.5rem;
+}

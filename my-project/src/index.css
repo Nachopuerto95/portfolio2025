@@ -7,8 +7,10 @@
   --font-color-2: rgb(141, 151, 170);
   --mouse-gradient: rgba(31, 63, 122, 0.407);
   --hover-color: rgb(94 234 212);
+  --hover-color-bg: rgba(20, 88, 77, 0.63);
 
 }
+
 
 html {
 	line-height: 1.5;
@@ -16,8 +18,8 @@ html {
 	font-feature-settings: "ss03","cv02","cv11";
 	font-variation-settings: "normal";
 	color: var(--font-color);
-	background-color: var(--bg-color);
 	font-family: var(--font-inter);
+	background-color: var(--bg-color);
 }
 h1 {
 	font-family: var(--font-inter);
@@ -25,9 +27,12 @@ h1 {
 	font-weight: 900;
 	font-size: 3rem;
 }
+strong {
+	color: rgb(166, 175, 177)
+}
 
 .selected {
-	color: white;
+	color: var(--hover-color);
 }
 .selected .menu-bar{
 	width: 3.5rem !important
@@ -47,4 +52,13 @@ nav div:hover {
 
 nav div:hover .menu-bar {
   width: 3.5rem;
+}
+
+.gallery-item {
+	width: 20%;
+	transition: all 150ms ease;
+}
+
+.gallery-item:hover {
+	transform: scale(1.2);
 }

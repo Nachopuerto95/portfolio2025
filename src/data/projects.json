@@ -1,31 +1,271 @@
 [
     {
-	  "web": true,
-	  "link": "no",
-      "images": ["/images/web1.png", "/images/web2.png", "/images/web2.png", "/images/web2.png", "/images/web2.png", "/images/web2.png"],
-      "title": "Fit-Tracker",
-      "description": "Praesent et dolor eleme nturaesent et dolor elementum raesent et dolor elementum raesent et dolor elementum raesentraesentraesentraesentraesentraesraesentraesentraesentraesentraesentrae nturaesent et dolor elementum raesent et dolor elementum raesent et dolor elementum raesentraesentraesentraesentraesentraesraesentraesentraesentraesentraesentrae nturaesent et dolor elementum raesent et dolor elementum raesent et dolor elementum raesentraesentraesentraesentraesentraesraesentraesentraesentraesentraesentrae nturaesent et dolor elementum raesent et dolor elementum raesent et dolor elementum raesentraesentraesentraesentraesentraesraesentraesentraesentraesentraesentraesraesentraesentraesentraesentraesentraesraesentraesentraesentraesentraesentraes  entra esentr  a ese nt   raesentraesentraesentraesentraesentraesentraesentraesentraesentraesent et dolor elementumraesent et dolor elementuraesent et dolor elementumraesent et dolor elementummraesent et dolor elementumvraesent et dolor elementumm...",
-      "tags": ["JavaScript", "React", "Node.js", "MongoDB", "Docker", "HTML & CSS"] 
+		"web": true,
+		"link": "https://fit-tracker.fly.dev/",
+		"git": "https://github.com/nacho-alex/project-module-3",
+		"images": ["/images/web1_fit/web1_01.png", "/images/web1_fit/web1_02.png", "/images/web1_fit/web1_03.png", "/images/web1_fit/web1_04.png","/images/web1_fit/web1_05.png", "/images/web1_fit/web1_06.png","/images/web1_fit/web1_07.png","/images/web1_fit/web1_08.png","/images/web1_fit/web1_09.png", "/images/web1_fit/web1_10.png", "/images/web1_fit/web1_11.png", "/images/web1_fit/web1_12.png", "/images/web1_fit/web1_13.png", "/images/web1_fit/web1_14.png", "/images/web1_fit/web1_15.png", "/images/web1_fit/web1_16.png"],
+		"title": "Fit-Tracker - Seguimiento deportivo",
+		"description": "Aplicación integral de seguimiento de fitness que permite a los usuarios gestionar rutinas de ejercicio, monitorear su alimentación y visualizar su progreso a través de gráficos intuitivos.",
+		"caracteristicas": [
+			{
+				"name": "Seguimiento", 
+				"lines": [
+					"Registro de usuario con datos personales para cálculo automático de necesidades nutricionales",
+					"Calendario interactivo con historial de actividades y alimentación"
+				]
+			},
+			{
+				"name": "Ejercicio", 
+				"lines": [
+					"Biblioteca de rutinas predefinidas seleccionables",
+					"Registro de actividad física diaria",
+					"Seguimiento de progreso mediante gráficas",
+					"Personalización de rutinas según perfil de usuario"
+				]
+			},
+			{
+				"name": "Nutrición", 
+				"lines": [
+					"Registro de comidas y creación de biblioteca personal de alimentos",
+					"Cálculo automático del balance de calorías diarias",
+					"Seguimiento de macronutrientes (proteínas, carbohidratos, grasas)"
+				]
+			}
+		],
+	"tags": ["JavaScript", "React", "Node.js", "MongoDB", "Docker", "HTML & CSS"] 
     },
-    {
-	  "web": true,
-      "images": ["/images/web2.png"],
-      "title": "Reelations",
-      "description": "Praesent et dolor elementum...2",
-      "tags": ["JavaScript", "Node.js", "Handlebars", "HTML & CSS"]
-    },
-	    {
-	  "web": false,
-      "images": ["/images/web2.png"],
-      "title": "Reelations",
-      "description": "Praesent et dolor elementum...2",
-      "tags": ["JavaScript", "Node.js", "Handlebars", "HTML & CSS"]
-    },
-	    {
-	  "web": false,
-      "images": ["/images/web2.png"],
-      "title": "Reelations",
-      "description": "Praesent et dolor elementum...2",
-      "tags": ["JavaScript", "Node.js", "Handlebars", "HTML & CSS"]
-    }
-  ]
+	{
+		"web": true,
+		"link": "https://project-module2.fly.dev/",
+		"git": "https://github.com/nacho-alex/project-module2",
+		"images": ["/images/web2_reel/web2_01.png", "/images/web2_reel/web2_02.png", "/images/web2_reel/web2_03.png", "/images/web2_reel/web2_04.png", "/images/web2_reel/web2_05.png", "/images/web2_reel/web2_06.png", "/images/web2_reel/web2_07.png", "/images/web2_reel/web2_08.png", "/images/web2_reel/web2_09.png", "/images/web2_reel/web2_10.png"],
+		"title": "Reelations - Red social de cine",
+		"description": "Reelations es una red social dedicada a los amantes del cine que permite descubrir, catalogar y compartir experiencias cinematográficas. Ofrece herramientas para organizar películas vistas o pendientes, interactuar con otros usuarios etc...  ",
+		"caracteristicas": [
+			{
+				"name": "Descubrimiento Cinematográfico",
+				"lines": [
+				"Sistema de recomendación inteligente que sugiere películas aleatorias según preferencias y filtros aplicados por el usuario.",
+				"Catálogo completo filtrable por múltiples criterios: género, año de lanzamiento, valoración de críticos y usuarios, duración, etc."
+				]
+			},
+			{
+				"name": "Organización Personal",
+				"lines": [
+				"Creación de listas personalizadas (películas vistas, favoritas, pendientes) con posibilidad de compartirlas con otros usuarios."
+				]
+			},
+			{
+				"name": "Interacción Social",
+				"lines": [
+				"Fichas detalladas de cada película con información técnica, reparto, sinopsis y material promocional.",
+				"Sección de comentarios y valoraciones para compartir opiniones y generar debate con otros aficionados del cine."
+				]
+			}
+		],
+		"tags": ["JavaScript", "Node.js", "Handlebars", "HTML & CSS"]
+	},
+	{
+	"link": "",
+		"git": "https://github.com/Nachopuerto95/Restaurants_WEB",
+		"web": true,
+		"images": ["/images/web3_rest/web3_01.png", "/images/web3_rest/web3_02.png", "/images/web3_rest/web3_03.png", "/images/web3_rest/web3_04.png"],
+		"title": "Beet it - Aplicación de restaurantes",
+		"description": "Es una página para buscar restaurantes por zona, puedes activar ubicación o escribir la que prefieras para ver la oferta de restaurantes, filtrar por categoría precio etc...",
+		"caracteristicas": [
+			{
+				"name": "🚧 EN DESARROLLO 🚧"
+			}
+		],
+		"tags": ["JavaScript", "React", "Node.js", "HTML & CSS", "Google APIs"]
+	},
+	{
+		"link": "https://adventure-forest-nachopuerto.netlify.app/",
+		"git": "https://github.com/Nachopuerto95/JUEGO-IRONHACK",
+		"web": true,
+		"images": ["/images/web4_game/web4_01.png", "/images/web4_game/web4_02.png", "/images/web4_game/web4_03.png", "/images/web4_game/web4_04.png", "/images/web4_game/web4_05.png", "/images/web4_game/web4_06.png", "/images/web4_game/web4_07.png"],
+		"title": "Adventure forest - Endless runner game",
+		"description": "Es un juego basado en el Dinosaurio de chrome pero con algunas mecánicas que lo hacen bastante adictivo, es símple y dinámico y su dificultad va en aumento",
+		"caracteristicas": [
+			{
+				"name": "Características",
+				"lines": [
+				"Se autogeneran enemigos y obstáculos, hay un tiempo límite que se puede aumentar atrapando las frutas, a su vez todo el juego se acelera conforme avanza el jugador",
+				"Tiene una interfaz, con instrucciones y tabla de puntuaciones local (utiliza LocalStorage)",
+				"Sprites retro de el juego Adventure island 3 de SNES"
+				]
+			}
+		],
+		"tags": ["JavaScript", "POO", "HTML & CSS"]
+	},
+	{
+		"git": "https://github.com/jpuerto-loruzqui/Cub3D",
+		"images": ["/images/low1_cub/low1_00.png","/images/low1_cub/low1_02.gif", "/images/low1_cub/low1_01.gif", "/images/low1_cub/low1_03.gif", "/images/low1_cub/low1_04.gif", "/images/low1_cub/low1_05.png"],
+		"title": "Cub3d - Algoritmo ray-casting en C",
+		"description": "Cub3D es un proyecto de gráficos 3D donde se desarrolla un motor gráfico basado en algoritmo de raycasting, inspirado en el clásico Wolfenstein 3D. El objetivo es crear un laberinto tridimensional navegable en primera persona con texturas, iluminación dinámica y control completo del personaje.",
+		"caracteristicas": [
+			{
+				"name": "Motor de Raycasting",
+				"lines": [
+					"Implementación completa del algoritmo DDA (Digital Differential Analysis) para calcular distancias a paredes con precisión",
+					"Corrección de la distorsión de perspectiva (fish-eye) mediante transformaciones matemáticas",
+					"Renderizado optimizado para mantener un rendimiento fluido incluso en mapas complejos y gestión eficiente de memoria con estructuras de datos minimalistas conforme a las normas de 42"
+				]
+			},
+			{
+				"name": "Renderizado 3D",
+				"lines": [
+					"Sistema de texturas para paredes con mapeo preciso según punto de impacto del rayo",
+					"Efectos de iluminación dinámica con sombreado según distancia y orientación de las paredes"
+				]
+			}
+		],
+		"tags": ["C", "Algoritmia", "Design tools"]
+	},
+	{
+		"git": "https://github.com/nachopuerto95/cpp",
+		"images": ["/images/low2_cpp/low2_01.png"],
+		"title": "C++ Piscine",
+		"description": "Un conjunto de proyectos de CPP (cada uno consta de 3 a 5 ejercicios) en los que se exploran los fundamentos y conceptos avanzados de la Programación Orientada a Objetos (POO). El aprendizaje se estructura en dos bloques progresivos: el primero se centra en las bases de la POO y el segundo profundiza en plantillas, gestión de memoria y la Standard Template Library (STL).",
+		"caracteristicas": [
+			{	
+				"name": "Módulos 00-04: Fundamentos de C++ y POO",
+				"lines": [
+					"Transición de C a C++, introduciendo conceptos como clases, constructores, destructores y el puntero 'this'.",
+					"Gestión de memoria dinámica con 'new' y 'delete', polimorfismo (sobrecarga de operadores y funciones) y la forma canónica de Coplien.",
+					"Implementación de herencia y polimorfismo de subtipo a través de funciones virtuales y clases abstractas para construir jerarquías de clases flexibles."
+				]
+			},
+			{
+				"name": "Módulos 05-09: C++ Avanzado y STL",
+				"lines": [
+					"Manejo robusto de errores mediante el sistema de excepciones (try, catch, throw).",
+					"Introducción a la programación genérica con plantillas (templates) para crear código reutilizable y adaptable a diferentes tipos de datos.",
+					"Dominio de la Standard Template Library (STL), incluyendo el uso de contenedores (vector, map, list), iteradores y algoritmos para resolver problemas complejos de manera eficiente."
+				]
+			}
+		],
+		"tags": ["C++", "POO", "C"]
+	},
+	{
+		"git": "https://github.com/jpuerto-loruzqui/42Miinishell",
+		"images": ["/images/low3_mini/low3_01.png", "/images/low3_mini/low3_02.png"],
+		"title": "Minishell - Tu propio intérprete",
+		"description": "Desarrollo de una réplica funcional de un intérprete de comandos de UNIX como bash. El proyecto consiste en parsear y ejecutar comandos introducidos por el usuario, gestionar procesos, redirecciones, pipes y señales, así como implementar comandos internos (built-ins).",
+		"caracteristicas": [
+			{
+				"name": "Parsing y Ejecución de Comandos",
+				"lines": [
+					"Análisis de la entrada del usuario para interpretar comandos, argumentos, pipes y redirecciones.",
+					"Gestión de variables de entorno, comillas y caracteres especiales para un comportamiento similar a shells estándar."
+				]
+			},
+			{
+				"name": "Gestión de Procesos y Flujos",
+				"lines": [
+					"Uso de 'fork', 'execve' y 'wait' para crear y gestionar procesos hijos que ejecutan comandos externos.",
+					"Implementación de tuberías (|) para comunicar la salida de un proceso con la entrada de otro, y redirecciones de entrada/salida (<, >, <<, >>)."
+				]
+			},
+			{
+				"name": "Built-ins y Señales",
+				"lines": [
+					"Manejo de señales como Ctrl-C (SIGINT) y Ctrl-\\ (SIGQUIT) para una interacción robusta con el usuario.",
+					"Creación de comandos internos como 'echo', 'cd', 'pwd', 'export', 'unset', 'env' y 'exit' que se ejecutan directamente en el shell."
+				]
+			}
+		],
+		"tags": ["C", "Unix", "Shell", "Procesos", "Señales"]
+	},
+	{
+		"git": "https://github.com/Nachopuerto95/inception",
+		"images": ["/images/low4_inc/low4_01.png"],
+		"title": "Inception - Docker compose para 42",
+		"description": "Proyecto de administración de sistemas y virtualización que consiste en desplegar una infraestructura de múltiples servicios utilizando Docker. Se debe orquestar un conjunto de contenedores (Nginx, WordPress, MariaDB) para que funcionen como una aplicación web completa y segura.",
+		"caracteristicas": [
+			{
+				"name": "Contenedorización con Docker",
+				"lines": [
+					"Creación de imágenes personalizadas para cada servicio (Nginx, WordPress, MariaDB) a través de Dockerfiles.",
+					"Configuración de redes y volúmenes para garantizar la comunicación entre contenedores y la persistencia de los datos.",
+					"Como parte del bonus implementé Adminer para consultar la Database, y FTP para transferir archivos entre máquinas, además de una página estática (Yo realicé este portfolio para esa sección)"
+				]
+			},
+			{
+				"name": "Orquestación y Despliegue",
+				"lines": [
+					"Uso de docker-compose para definir, configurar y gestionar el ciclo de vida de la aplicación multi-contenedor.",
+					"Implementación de un servidor web Nginx con configuración TLS/SSL para asegurar las comunicaciones."
+				]
+			},
+			{
+				"name": "Administración de Servicios",
+				"lines": [
+					"Despliegue de una base de datos MariaDB y un gestor de contenidos WordPress, asegurando su correcta interconexión.",
+					"Configuración avanzada de servicios, incluyendo la gestión de variables de entorno y secretos para la configuración."
+				]
+			}
+		],
+		"tags": ["Docker", "Docker-Compose", "Nginx", "WordPress", "Shell", "React", "JSON", "FTP", "Mysql" ]
+	},
+	{
+		"git": "https://github.com/Nachopuerto95/philosophers",
+		"images": ["/images/low5_phil/low5_01.png", "/images/low5_phil/low5_02.png"],
+		"title": "Philosophers",
+		"description": "Resolución del clásico problema de concurrencia de los filósofos cenando. El objetivo es simular un escenario donde varios filósofos deben compartir recursos (tenedores) sin caer en interbloqueos (deadlocks) ni inanición, aprendiendo los fundamentos de la programación multihilo y la sincronización.",
+		"caracteristicas": [
+			{
+				"name": "Programación Multihilo",
+				"lines": [
+					"Creación y gestión de múltiples hilos (pthreads), donde cada hilo representa a un filósofo.",
+					"Sincronización del ciclo de vida de los filósofos (comer, dormir, pensar) para que se ejecuten de manera concurrente."
+				]
+			},
+			{
+				"name": "Sincronización y Mutex",
+				"lines": [
+					"Uso de mutex (cerrojos de exclusión mutua) para proteger los recursos compartidos (tenedores) y evitar condiciones de carrera.",
+					"Implementación de un algoritmo que previene deadlocks, asegurando que el sistema pueda progresar indefinidamente."
+				]
+			},
+			{
+				"name": "Monitorización y Precisión",
+				"lines": [
+					"Medición precisa del tiempo para controlar las acciones de los filósofos y detectar si alguno muere de hambre.",
+					"Desarrollo de un sistema de logs que muestra el estado de cada filósofo en tiempo real sin interferir con la simulación."
+				]
+			}
+		],
+		"tags": ["C", "Multithreading", "Concurrencia", "Mutex", "Pthreads"]
+	},
+	{
+	"git": "https://github.com/Nachopuerto95/push_swap",
+	"images": ["/images/low6_pusw/low6_01.gif"],
+	"title": "Push Swap",
+	"description": "Un proyecto de algoritmia que consiste en ordenar una pila de números utilizando un conjunto limitado de operaciones y dos pilas (A y B). El desafío es encontrar la secuencia de instrucciones más corta posible para ordenar los números, optimizando la eficiencia del algoritmo.",
+	"caracteristicas": [
+		{
+		"name": "Manipulación de Pilas (Stacks)",
+		"lines": [
+			"Implementación de las operaciones permitidas: swap (sa, sb, ss), push (pa, pb), y rotate (ra, rb, rr, rra, rrb, rrr).",
+			"Diseño de estructuras de datos (listas enlazadas) para representar y manipular eficientemente las dos pilas."
+		]
+		},
+		{
+		"name": "Algoritmo de Ordenación",
+		"lines": [
+			"Desarrollo de un algoritmo eficiente para ordenar los números minimizando el número de movimientos.",
+			"Estrategia de 'divide y vencerás', moviendo los números de la pila A a la B de manera ordenada para luego devolverlos."
+		]
+		},
+		{
+		"name": "Optimización y Eficiencia",
+		"lines": [
+			"Implementación de algoritmos como 'Turk Algorithm' o variantes para optimizar la selección de movimientos.",
+			"Creación de un programa 'checker' que verifica si la secuencia de instrucciones generada ordena correctamente la pila."
+		]
+		}
+	],
+	"tags": ["C", "Algoritmia", "Estructura de Datos", "Optimización"]
+	}
+]

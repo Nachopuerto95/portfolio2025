@@ -81,7 +81,7 @@ function Info(props) {
 						<a className="text-[12px] mb-1 rounded-2xl border-[var(--hover-color)]  border-1 font-bold  py-1 px-3" href=""><i className=" text-[13px] fa-brands fa-github mr-2"></i>Ver repositorio</a>
 					) : (null)}
 					<div className="flex flex-col">
-						<p className="mt-5 text-[var(--font-color-2)] h-50 overflow-y-auto break-all text-sm">
+						<p className="mt-5 text-[var(--font-color-2)] h-50 overflow-y-auto break-all text-sm pr-5">
 							{project.description}
 						</p>
 					</div>

@@ -57,7 +57,7 @@ function Info(props) {
 					ref={carouselRef}
 					className="flex gap-3 p-3 scroll-smooth scrollbar-hide">
 					{project.images.map((img, idx) => (
-							<img onClick={ () => setImage(idx)} className="gallery-item" key={idx} src={img} alt={`Image ${idx}`} />
+							<img onMouseEnter={ () => setImage(idx)} className="gallery-item cursor-pointer" key={idx} src={img} alt={`Image ${idx}`} />
 					))}
 					</div>
 				</div>
@@ -69,9 +69,10 @@ function Info(props) {
 			</div>
 				
             </div>
-			<div className="flex flex-col w-140 max-h-110 overflow-y-auto justify-between p-5 rounded-lg bg-[var(--bg-color)]/90 shadow-lg border-t-1 border-white/8">
-				<div className="pb-5">
-					<div className="flex  items-center"> <h2 className="font-bold text-xl mb-2">{project.title}</h2>
+			<div className="flex flex-col w-140 max-h-110 justify-between p-5 rounded-lg bg-[var(--bg-color)]/90 shadow-lg border-t-1 border-white/8">
+				<div className="pb-5 relative">
+				<div onClick={() => setIsOpen(false)} className="absolute  right-5"><i className="cursor-pointer fa-solid fa-xmark"></i></div>
+					<div className="flex  items-center jus"> <h2 className="font-bold text-xl mb-2">{project.title}</h2>
 					{project.link?.length > 0 ? (
 						<a className="ml-5 text-sm mb-1 text-[var(--hover-color)]" href="">ir a la pagina<i className="ml-2 text-[13px] fa-solid fa-arrow-up-right-from-square"></i></a>
 					) : ( null )}
@@ -80,7 +81,7 @@ function Info(props) {
 						<a className="text-[12px] mb-1 rounded-2xl border-[var(--hover-color)]  border-1 font-bold  py-1 px-3" href=""><i className=" text-[13px] fa-brands fa-github mr-2"></i>Ver repositorio</a>
 					) : (null)}
 					<div className="flex flex-col">
-						<p className="mt-5 text-[var(--font-color-2)] break-all text-sm">
+						<p className="mt-5 text-[var(--font-color-2)] h-50 overflow-y-auto break-all text-sm">
 							{project.description}
 						</p>
 					</div>

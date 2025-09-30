@@ -11,6 +11,44 @@
 
 }
 
+/* Estilo para navegadores basados en WebKit */
+::-webkit-scrollbar {
+  width: 8px; /* o height para scroll horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* fondo del "camino" */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--hover-color); /* color del scroll */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hover-color);
+}
+
+/* Global scroll minimalista */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--hover-color) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--hover-color);
+  border-radius: 10px;
+}
+
 
 html {
 	line-height: 1.5;
@@ -56,7 +94,7 @@ nav div:hover .menu-bar {
 
 .gallery-item {
 	width: 20%;
-	transition: all 150ms ease;
+	transition: all 100ms ease;
 }
 
 .gallery-item:hover {

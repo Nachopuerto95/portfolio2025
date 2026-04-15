@@ -20,7 +20,8 @@
     "experience": { "es": "Experience", "en": "Experience" },
     "web": { "es": "Full-stack Web", "en": "Full-stack Web" },
     "low": { "es": "Low-level & Algorithms", "en": "Low-level & Algorithms" },
-    "highlights": { "es": "Highlights", "en": "Highlights" }
+    "highlights": { "es": "Highlights", "en": "Highlights" },
+    "testimonials": { "es": "Testimonials", "en": "Testimonials" }
   },
   "social": {
     "email": "nachopuerto95@gmail.com",
@@ -89,6 +90,30 @@
       }
     }
   ],
+  "testimonials": [
+    {
+      "text": {
+        "es": "[PLACEHOLDER] Pega aquí la recomendación que te dejaron en LinkedIn. Esta sección es editable desde /admin o directamente en src/data/site.json.",
+        "en": "[PLACEHOLDER] Paste here a recommendation someone wrote for you on LinkedIn. This section is editable from /admin or in src/data/site.json."
+      },
+      "author": "Nombre del que te recomendó",
+      "role": {
+        "es": "Puesto · Empresa",
+        "en": "Role · Company"
+      }
+    },
+    {
+      "text": {
+        "es": "[PLACEHOLDER] Segunda recomendación. Recuerda: cuanto más concreta (que mencione un proyecto, una skill específica o un resultado) más convincente es para un recruiter.",
+        "en": "[PLACEHOLDER] Second recommendation. The more concrete (mentions a project, a specific skill, or a result) the more convincing it is for a recruiter."
+      },
+      "author": "Segunda persona",
+      "role": {
+        "es": "Puesto · Empresa",
+        "en": "Role · Company"
+      }
+    }
+  ],
   "sections": {
     "experience": {
       "es": "Experiencia profesional",
@@ -105,6 +130,10 @@
     "highlights": {
       "es": "Highlights",
       "en": "Highlights"
+    },
+    "testimonials": {
+      "es": "Lo que dicen de mí",
+      "en": "What they say"
     }
   }
 }

@@ -148,6 +148,28 @@ collections:
                 widget: list
                 field: { label: "Tecnología", name: tech, widget: string }
 
+          - label: "Testimonials"
+            name: testimonials
+            widget: list
+            required: false
+            summary: "{{fields.author}}"
+            fields:
+              - label: "Texto"
+                name: text
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: text }
+                  - { label: "EN", name: en, widget: text }
+              - { label: "Autor", name: author, widget: string }
+              - label: "Puesto · Empresa"
+                name: role
+                widget: object
+                required: false
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - { label: "Avatar (opcional)", name: avatar, widget: image, required: false }
+
           - label: "Highlights / Reconocimientos"
             name: highlights
             widget: list

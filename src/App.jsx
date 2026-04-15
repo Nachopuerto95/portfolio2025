@@ -32,6 +32,7 @@ const NAV_ITEMS = [
 	{ id: 'web' },
 	{ id: 'low' },
 	{ id: 'highlights' },
+	{ id: 'testimonials' },
 ];
 
 function App() {
@@ -304,6 +305,35 @@ function App() {
 							<i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
 						</a>
 					</section>
+
+					{site.testimonials && site.testimonials.length > 0 && (
+						<section ref={setRef('testimonials')} className='flex flex-col gap-5' id='testimonials'>
+							<h2 className="mt-16 lg:mt-20 font-bold flex items-center space-x-2">
+								<i className="fa-solid fa-quote-left"></i>
+								<span className="w-8 border-[var(--font-color)] border-b-[0.5px] mx-5"></span>
+								<span>{t(site.sections.testimonials, lang)}</span>
+							</h2>
+							<div className="flex flex-col gap-4">
+								{site.testimonials.map((tst, idx) => (
+									<article key={idx} className="p-5 rounded-lg border-t border-white/8 bg-[var(--bg-color-2)]/40 relative">
+										<i className="fa-solid fa-quote-left text-[var(--hover-color)]/25 text-3xl absolute top-3 right-4"></i>
+										<p className="text-sm text-[var(--font-color-2)] italic leading-relaxed pr-10">
+											{t(tst.text, lang)}
+										</p>
+										<div className="mt-4 flex items-center gap-3 pt-3 border-t border-white/5">
+											{tst.avatar && (
+												<img src={tst.avatar} alt={tst.author} className="w-10 h-10 rounded-full object-cover border border-white/10" />
+											)}
+											<div>
+												<h3 className="font-bold text-sm">{tst.author}</h3>
+												{tst.role && <p className="text-[12px] text-[var(--font-color-2)]">{t(tst.role, lang)}</p>}
+											</div>
+										</div>
+									</article>
+								))}
+							</div>
+						</section>
+					)}
 
 					{site.highlights && site.highlights.length > 0 && (
 						<section ref={setRef('highlights')} className='flex flex-col gap-5' id='highlights'>

@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: Nachopuerto95/portfolio2025
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+publish_mode: simple
+
+collections:
+  - name: site
+    label: "Contenido del sitio"
+    files:
+      - name: site
+        label: "General"
+        file: "src/data/site.json"
+        format: json
+        fields:
+          - { label: "Nombre", name: name, widget: string }
+          - { label: "Rol", name: role, widget: string }
+          - { label: "Tagline", name: tagline, widget: text }
+          - label: "Navegación"
+            name: nav
+            widget: object
+            fields:
+              - { label: "About", name: about, widget: string }
+              - { label: "Web", name: web, widget: string }
+              - { label: "Low-level", name: low, widget: string }
+          - label: "Redes sociales"
+            name: social
+            widget: object
+            fields:
+              - { label: "GitHub URL", name: github, widget: string }
+              - { label: "LinkedIn URL", name: linkedin, widget: string }
+          - label: "Sobre mí"
+            name: about
+            widget: markdown
+            hint: "Usa **texto** para negrita y deja una línea en blanco entre párrafos."
+          - label: "Títulos de sección"
+            name: sections
+            widget: object
+            fields:
+              - { label: "Sección Web", name: web, widget: string }
+              - { label: "Sección Low-level", name: low, widget: string }
+
+  - name: projects
+    label: "Proyectos"
+    files:
+      - name: projects
+        label: "Lista de proyectos"
+        file: "src/data/projects.json"
+        format: json
+        fields:
+          - label: "Proyectos"
+            name: projects
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Título", name: title, widget: string }
+              - label: "Categoría"
+                name: web
+                widget: select
+                options:
+                  - { label: "Full-stack Web", value: true }
+                  - { label: "Low-level / Algoritmos", value: false }
+              - { label: "Descripción", name: description, widget: text }
+              - { label: "Enlace al sitio", name: link, widget: string, required: false }
+              - { label: "Repositorio GitHub", name: git, widget: string, required: false }
+              - label: "Imágenes"
+                name: images
+                widget: list
+                field: { label: "Imagen", name: image, widget: image }
+              - label: "Tags"
+                name: tags
+                widget: list
+                field: { label: "Tag", name: tag, widget: string }
+              - label: "Características"
+                name: caracteristicas
+                widget: list
+                required: false
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Nombre", name: name, widget: string }
+                  - label: "Líneas"
+                    name: lines
+                    widget: list
+                    field: { label: "Línea", name: line, widget: string }

@@ -1,0 +1,19 @@
+{
+  "name": "Nacho Puerto",
+  "role": "Full stack & low level developer",
+  "tagline": "Versatilidad entre la creatividad del Front-end y la lógica de los sistemas",
+  "nav": {
+    "about": "About me",
+    "web": "Full-stack Web development",
+    "low": "Low-level & Algorithms"
+  },
+  "social": {
+    "github": "https://github.com/Nachopuerto95",
+    "linkedin": "https://www.linkedin.com/in/nacho-puerto-mendoza-93184b173/"
+  },
+  "about": "Soy un **Desarrollador Fullstack** apasionado por crear soluciones tecnológicas que marquen la diferencia. Mi viaje en el mundo de la programación comenzó hace algunos años, cuando descubrí que el código no era solo una herramienta, sino mi verdadera vocación.\n\nActualmente, estoy perfeccionando mis habilidades en **42 Madrid (Fundación Telefónica)**, una institución reconocida por su enfoque innovador de aprendizaje basado en proyectos y colaboración entre pares. Esta experiencia ha fortalecido mis conocimientos técnicos en **lenguajes de bajo nivel como C y C++**, además de mejorar mi capacidad para resolver problemas complejos, trabajar en equipo y adaptarme rápidamente a nuevas tecnologías.\n\nCreo firmemente que la programación es un arte que combina lógica, creatividad y aprendizaje constante. Cada proyecto representa una oportunidad para crecer, un reto que pone a prueba mi intelecto y mi capacidad para encontrar soluciones. Disfruto mucho del proceso.\n\nMi carrera profesional comenzó en el ámbito del diseño gráfico. Sin embargo, al descubrir mi pasión por la tecnología, decidí redirigir mi camino hacia el desarrollo. Actualmente, busco una oportunidad laboral donde pueda aportar mi entusiasmo, dedicación y conocimientos. Me motiva especialmente formar parte de equipos innovadores donde pueda seguir desarrollándome y contribuir al éxito de proyectos desafiantes.",
+  "sections": {
+    "web": "Full-stack Web development projects",
+    "low": "Low-level & Algorithms"
+  }
+}

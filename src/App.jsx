@@ -4,7 +4,6 @@ import ProjectCard from './components/Projects/ProjectCard/ProjectCard';
 import Canvas from './components/canvas/Canvas';
 import Info from './components/Info/Info';
 import LanguageToggle from './components/LanguageToggle';
-import PalettePicker from './components/PalettePicker';
 import projectsData from './data/projects.json';
 import site from './data/site.json';
 import { useLang, t } from './i18n';
@@ -72,7 +71,6 @@ function App() {
 	return (
 		<>
 			<LanguageToggle />
-			<PalettePicker />
 			<Info isOpen={isOpen} setIsOpen={setIsOpen} project={selectedProject} />
 			<div className="relative flex flex-col lg:flex-row min-h-screen lg:justify-center lg:gap-5 bg-fixed">
 				<div className="hidden lg:block">

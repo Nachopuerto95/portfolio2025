@@ -25,10 +25,12 @@ export default function Canvas() {
     };
     window.addEventListener("mousemove", handleMouseMove);
 
+    const FALLBACK_RGB = '129, 140, 248'; // navy-indigo --accent
     function getAccentRgb() {
       const c = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
       const m = c.match(/\d+/g);
-      return m ? `${m[0]}, ${m[1]}, ${m[2]}` : '94, 234, 212';
+      if (!m || m.length < 3) return FALLBACK_RGB;
+      return `${m[0]}, ${m[1]}, ${m[2]}`;
     }
 
     function draw() {

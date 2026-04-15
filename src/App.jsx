@@ -110,7 +110,7 @@ function App() {
 								<img
 									src={site.avatar}
 									alt={site.name}
-									className="w-20 h-20 rounded-full object-cover border-2 border-[var(--accent)]/40 shadow-lg"
+									className="w-28 h-28 rounded-full object-cover border-2 border-[var(--accent)]/40 shadow-lg"
 								/>
 							)}
 							<span className="status-pill">
@@ -125,6 +125,16 @@ function App() {
 						<p className='mt-3 max-w-80 font-normal text-[var(--font-color-2)]'>
 							{t(site.tagline, lang)}
 						</p>
+						{site.social.email && (
+							<a
+								href={`mailto:${site.social.email}`}
+								className="cta-email mt-5"
+							>
+								<i className="fa-solid fa-envelope"></i>
+								<span>{lang === 'en' ? 'Get in touch' : 'Escríbeme'}</span>
+								<i className="fa-solid fa-arrow-right cta-arrow"></i>
+							</a>
+						)}
 						<nav className="text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-6 nav-timeline">
 							<div ref={trackRef} className="nav-track" aria-hidden="true">
 								<div
@@ -154,12 +164,6 @@ function App() {
 						</nav>
 					</div>
 					<div className="flex flex-wrap gap-x-6 gap-y-3 justify-start mt-10 lg:mt-15">
-						{site.social.email && (
-							<a href={`mailto:${site.social.email}`} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
-								<i className="fa-solid fa-envelope text-[22px] mr-3"></i>
-								<span>{lang === 'en' ? 'Email' : 'Escríbeme'}</span>
-							</a>
-						)}
 						<a href={site.social.github} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
 							<i className="fa-brands fa-github text-[25px] mr-3"></i> GitHub
 						</a>

@@ -58,12 +58,11 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { label: "Título", name: title, widget: string }
-              - label: "Categoría"
+              - label: "¿Es proyecto Web full-stack?"
                 name: web
-                widget: select
-                options:
-                  - { label: "Full-stack Web", value: true }
-                  - { label: "Low-level / Algoritmos", value: false }
+                widget: boolean
+                default: true
+                hint: "Activado = aparece en sección Web. Desactivado = aparece en Low-level."
               - { label: "Descripción", name: description, widget: text }
               - { label: "Enlace al sitio", name: link, widget: string, required: false }
               - { label: "Repositorio GitHub", name: git, widget: string, required: false }

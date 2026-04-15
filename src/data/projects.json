@@ -316,8 +316,8 @@
         "en": "ft_irc · IRC server in C++"
       },
       "description": {
-        "es": "Servidor IRC implementado desde cero en C++98 siguiendo el protocolo RFC 2812. Atiende múltiples clientes concurrentes usando I/O multiplexing (poll) sobre un único hilo, con canales, operadores, autenticación y manejo completo de eventos en tiempo real.",
-        "en": "An IRC server written from scratch in C++98 following the RFC 2812 protocol. Handles multiple concurrent clients on a single thread using I/O multiplexing (poll), with channels, operators, authentication and full real-time event handling."
+        "es": "Servidor IRC completo implementado desde cero en C++98 siguiendo el protocolo RFC 1459. Proyecto en equipo que atiende múltiples clientes concurrentes sobre un único hilo mediante I/O multiplexing con poll(), con autenticación, canales, operadores, modos y manejo de eventos en tiempo real. Compatible con clientes IRC reales (irssi, HexChat, WeeChat).",
+        "en": "A complete IRC server built from scratch in C++98 following the RFC 1459 protocol. Team project that handles multiple concurrent clients on a single thread via poll()-based I/O multiplexing, with authentication, channels, operators, modes and real-time event handling. Works with real IRC clients (irssi, HexChat, WeeChat)."
       },
       "link": "",
       "git": "https://github.com/Nachopuerto95/ft_irc",
@@ -332,14 +332,16 @@
           },
           "lines": {
             "es": [
-              "Loop principal basado en poll() para gestionar N clientes concurrentes sin bloquear ni crear un hilo por conexión.",
-              "Sockets TCP no-bloqueantes y buffers por cliente para manejar mensajes parciales.",
-              "Parser de comandos conforme al RFC 2812."
+              "Loop principal con poll() que maneja N clientes concurrentes sin bloquear y sin un hilo por conexión.",
+              "Sockets TCP no-bloqueantes (fcntl O_NONBLOCK) con buffers por cliente para mensajes parciales.",
+              "Parser de protocolo IRC con tokenización, validación según RFC 1459 y respuestas numéricas estándar.",
+              "Máquina de estados para tracking de autenticación y ciclo de vida del cliente."
             ],
             "en": [
-              "Main poll()-based event loop handling N concurrent clients on a single thread, with no blocking and no per-connection thread.",
-              "Non-blocking TCP sockets with per-client buffers to handle partial messages.",
-              "Command parser compliant with RFC 2812."
+              "poll()-based main loop handling N concurrent clients with no blocking and no per-connection thread.",
+              "Non-blocking TCP sockets (fcntl O_NONBLOCK) with per-client buffers to handle partial messages.",
+              "IRC protocol parser with tokenization, RFC 1459 validation and standard numeric reply codes.",
+              "State machine tracking authentication and client lifecycle."
             ]
           }
         },
@@ -351,24 +353,46 @@
           "lines": {
             "es": [
               "Autenticación con PASS, NICK y USER antes de unirse a canales.",
-              "Canales con modos (+i, +t, +k, +o, +l), invitaciones, mensajes privados y broadcasts.",
-              "Comandos de operador (KICK, INVITE, TOPIC, MODE) con comprobaciones de permisos."
+              "Comandos de canal: JOIN, PART, TOPIC, NAMES, LIST, INVITE y KICK.",
+              "Mensajería con PRIVMSG y NOTICE (a usuarios o canales, múltiples destinatarios).",
+              "Modos de canal +i (invite-only), +t (topic protegido), +k (password), +o (operador), +l (límite)."
             ],
             "en": [
               "Authentication with PASS, NICK and USER before joining channels.",
-              "Channels with modes (+i, +t, +k, +o, +l), invitations, private messages and broadcasts.",
-              "Operator commands (KICK, INVITE, TOPIC, MODE) with permission checks."
+              "Channel commands: JOIN, PART, TOPIC, NAMES, LIST, INVITE and KICK.",
+              "Messaging via PRIVMSG and NOTICE (users or channels, multi-recipient).",
+              "Channel modes +i (invite-only), +t (topic-protected), +k (password), +o (operator), +l (user limit)."
+            ]
+          }
+        },
+        {
+          "name": {
+            "es": "Diseño OOP",
+            "en": "OOP design"
+          },
+          "lines": {
+            "es": [
+              "Clases principales: Server, Client, Channel y Command, cada una encapsulando su estado y responsabilidad.",
+              "Dispatcher de comandos que enruta cada mensaje parseado a su handler correspondiente.",
+              "Uso intensivo de la STL (map, vector, string) respetando las restricciones de C++98."
+            ],
+            "en": [
+              "Core classes: Server, Client, Channel and Command, each encapsulating its own state and responsibility.",
+              "Command dispatcher that routes each parsed message to its proper handler.",
+              "Heavy use of the STL (map, vector, string) while respecting the C++98 constraints."
             ]
           }
         }
       ],
       "tags": [
-        "C++",
+        "C++98",
         "Networking",
+        "TCP/IP",
         "Sockets",
-        "RFC 2812",
         "poll",
-        "IRC"
+        "RFC 1459",
+        "IRC",
+        "42 Madrid"
       ]
     }
   ]

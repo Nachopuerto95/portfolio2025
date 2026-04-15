@@ -115,7 +115,7 @@ function App() {
 							)}
 							<span className="status-pill">
 								<span className="dot"></span>
-								{t(site.status?.label, lang) || 'Building @ Datista'}
+								{t(site.status?.label, lang) || 'Building ContestarIA'}
 							</span>
 						</div>
 						<h1>{site.name}</h1>

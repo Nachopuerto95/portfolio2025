@@ -4,11 +4,9 @@ import ProjectCard from './components/Projects/ProjectCard/ProjectCard';
 import Canvas from './components/canvas/Canvas';
 import Info from './components/Info/Info';
 import LanguageToggle from './components/LanguageToggle';
-import DesignPicker from './components/DesignPicker';
 import projectsData from './data/projects.json';
 import site from './data/site.json';
 import { useLang, t } from './i18n';
-import { useStyle } from './styleContext';
 
 const projects = projectsData.projects;
 
@@ -35,141 +33,8 @@ const NAV_ITEMS = [
 	{ id: 'highlights' },
 ];
 
-function NavItem({ item, idx, selected, setSelected, label, navStyle, itemRef }) {
-	const isActive = selected === item.id;
-	const num = String(idx + 1).padStart(2, '0');
-	const commonAnchor = `flex items-center gap-3 ${isActive ? 'selected' : ''}`;
-	const onClick = () => setSelected(item.id);
-
-	if (navStyle.startsWith('num-')) {
-		const showDot = navStyle === 'num-through' || navStyle === 'num-left';
-		return (
-			<a
-				ref={itemRef}
-				className={`nav-numbered-item group ${isActive ? 'active' : ''} variant-${navStyle}`}
-				href={`#${item.id}`}
-				onClick={onClick}
-			>
-				{showDot && <span className="nav-numbered-dot"></span>}
-				<span className="nav-numbered-num">{num}</span>
-				<span className="nav-numbered-label">{label}</span>
-			</a>
-		);
-	}
-	if (navStyle === 'dots') {
-		return (
-			<a className={commonAnchor} href={`#${item.id}`} onClick={onClick}>
-				<span className={`nav-dot ${isActive ? 'active' : ''}`}></span>
-				<span>{label}</span>
-			</a>
-		);
-	}
-	if (navStyle === 'minimal') {
-		return (
-			<a className={`nav-minimal ${isActive ? 'selected' : ''}`} href={`#${item.id}`} onClick={onClick}>
-				<span>{label}</span>
-			</a>
-		);
-	}
-	// bars (default / Chiang)
-	return (
-		<a className={`flex ${isActive ? 'selected' : ''}`} href={`#${item.id}`} onClick={onClick}>
-			<span className='menu-bar mr-4'></span>
-			{label}
-		</a>
-	);
-}
-
-function ProjectList({ items, onClick, cardStyle }) {
-	const { lang } = useLang();
-	if (cardStyle === 'numbered') {
-		return (
-			<ol className="flex flex-col gap-2">
-				{items.map((project, idx) => {
-					const num = String(idx + 1).padStart(2, '0');
-					return (
-						<li
-							key={idx}
-							onClick={() => onClick(project)}
-							className="card-numbered group cursor-pointer flex gap-5 items-baseline py-4 border-b border-white/5 hover:border-[var(--accent)]/40 transition"
-						>
-							<span className="card-num">{num}</span>
-							<div className="flex-1">
-								<h3 className="font-bold text-base group-hover:text-[var(--hover-color)] transition">
-									{t(project.title, lang)}
-									<i className="ml-3 text-[12px] fa-solid fa-arrow-up-right-from-square opacity-50 group-hover:opacity-100"></i>
-								</h3>
-								<p className="text-sm text-[var(--font-color-2)] mt-1">
-									{(() => {
-										const desc = t(project.description, lang);
-										return desc.length > 180 ? desc.substring(0, 180) + '…' : desc;
-									})()}
-								</p>
-								<div className="flex gap-2 flex-wrap mt-2">
-									{project.tags?.map((tag, ti) => (
-										<span key={ti} className="text-[11px] text-[var(--hover-color)]/80 font-semibold">
-											{tag}{ti < project.tags.length - 1 ? ' · ' : ''}
-										</span>
-									))}
-								</div>
-							</div>
-						</li>
-					);
-				})}
-			</ol>
-		);
-	}
-
-	if (cardStyle === 'minimal') {
-		return (
-			<div className="flex flex-col gap-3">
-				{items.map((project, idx) => (
-					<div
-						key={idx}
-						onClick={() => onClick(project)}
-						className="group cursor-pointer p-4 rounded-lg hover:bg-[var(--hover-color-bg)] transition"
-					>
-						<h3 className="font-bold text-base group-hover:text-[var(--hover-color)] transition">
-							{t(project.title, lang)}
-							<i className="ml-3 text-[12px] fa-solid fa-arrow-up-right-from-square opacity-50"></i>
-						</h3>
-						<p className="text-sm text-[var(--font-color-2)] mt-1">
-							{(() => {
-								const desc = t(project.description, lang);
-								return desc.length > 150 ? desc.substring(0, 150) + '…' : desc;
-							})()}
-						</p>
-						<div className="flex gap-2 flex-wrap mt-2">
-							{project.tags?.map((tag, ti) => (
-								<span key={ti} className="bg-[var(--hover-color)]/8 text-[var(--hover-color)]/80 text-[10px] px-2 py-0.5 rounded-full font-semibold">
-									{tag}
-								</span>
-							))}
-						</div>
-					</div>
-				))}
-			</div>
-		);
-	}
-
-	// default
-	return (
-		<>
-			{items.map((project, idx) => (
-				<ProjectCard
-					key={idx}
-					{...project}
-					image={project.images[0]}
-					onClick={() => onClick(project)}
-				/>
-			))}
-		</>
-	);
-}
-
 function App() {
 	const { lang } = useLang();
-	const { style } = useStyle();
 	const [selected, setSelected] = useState('about');
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedProject, setSelectedProject] = useState(null);
@@ -197,7 +62,7 @@ function App() {
 			clearTimeout(t);
 			window.removeEventListener('resize', recalc);
 		};
-	}, [selected, style.nav, lang]);
+	}, [selected, lang]);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -230,21 +95,15 @@ function App() {
 	const webProjects = projects.filter((p) => p.web);
 	const lowProjects = projects.filter((p) => !p.web);
 
-	const heroMassive = style.hero === 'massive';
-
 	return (
 		<>
 			<LanguageToggle />
-			<DesignPicker />
 			<Info isOpen={isOpen} setIsOpen={setIsOpen} project={selectedProject} />
-			{style.bg === 'grain' && <div className="grain-bg"></div>}
 			<div className="relative flex flex-col lg:flex-row min-h-screen lg:justify-center lg:gap-5 bg-fixed">
-				{style.bg === 'canvas' && (
-					<div className="hidden lg:block">
-						<Canvas />
-					</div>
-				)}
-				<aside className={`w-full lg:w-130 px-6 lg:ml-10 pt-16 pb-10 lg:py-20 lg:h-screen lg:sticky lg:top-0 flex flex-col lg:justify-between`}>
+				<div className="hidden lg:block">
+					<Canvas />
+				</div>
+				<aside className="w-full lg:w-130 px-6 lg:ml-10 pt-16 pb-10 lg:py-20 lg:h-screen lg:sticky lg:top-0 flex flex-col lg:justify-between">
 					<div className='flex flex-col'>
 						<div className="mb-4">
 							<span className="status-pill">
@@ -252,37 +111,39 @@ function App() {
 								{t(site.status?.label, lang) || 'Building @ Datista'}
 							</span>
 						</div>
-						<h1 className={heroMassive ? 'hero-massive' : ''}>{site.name}</h1>
-						<h2 className={`mt-1 font-medium tracking-tight text-[var(--hover-color)] ${heroMassive ? 'text-2xl lg:text-3xl' : 'text-base lg:text-lg'}`}>
+						<h1>{site.name}</h1>
+						<h2 className="mt-1 text-base lg:text-lg font-medium tracking-tight text-[var(--hover-color)]">
 							{t(site.role, lang)}
 						</h2>
-						<p className={`mt-3 font-normal text-[var(--font-color-2)] ${heroMassive ? 'max-w-lg' : 'max-w-80'}`}>
+						<p className='mt-3 max-w-80 font-normal text-[var(--font-color-2)]'>
 							{t(site.tagline, lang)}
 						</p>
-						<nav className={`text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-6 nav-style-${style.nav} ${style.nav === 'num-through' || style.nav === 'num-left' ? 'nav-timeline' : ''} ${style.nav === 'num-left' ? 'nav-timeline-left' : ''}`}>
-							{(style.nav === 'num-through' || style.nav === 'num-left') && (
-								<div ref={trackRef} className="nav-track" aria-hidden="true">
-									<div
-										className="nav-track-fill"
-										style={{ height: `${fillHeight}px` }}
-									/>
-								</div>
-							)}
-							{NAV_ITEMS.map((item, idx) =>
-								site.nav[item.id] ? (
+						<nav className="text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-6 nav-timeline">
+							<div ref={trackRef} className="nav-track" aria-hidden="true">
+								<div
+									className="nav-track-fill"
+									style={{ height: `${fillHeight}px` }}
+								/>
+							</div>
+							{NAV_ITEMS.map((item, idx) => {
+								if (!site.nav[item.id]) return null;
+								const isActive = selected === item.id;
+								const num = String(idx + 1).padStart(2, '0');
+								return (
 									<div key={item.id} className='flex justify-between'>
-										<NavItem
-											item={item}
-											idx={idx}
-											selected={selected}
-											setSelected={setSelected}
-											label={t(site.nav[item.id], lang)}
-											navStyle={style.nav}
-											itemRef={(el) => { itemRefs.current[idx] = el; }}
-										/>
+										<a
+											ref={(el) => { itemRefs.current[idx] = el; }}
+											className={`nav-numbered-item group ${isActive ? 'active' : ''}`}
+											href={`#${item.id}`}
+											onClick={() => setSelected(item.id)}
+										>
+											<span className="nav-numbered-dot"></span>
+											<span className="nav-numbered-num">{num}</span>
+											<span className="nav-numbered-label">{t(site.nav[item.id], lang)}</span>
+										</a>
 									</div>
-								) : null
-							)}
+								);
+							})}
 						</nav>
 					</div>
 					<div className="flex space-x-4 gap-8 justify-start mt-10 lg:mt-15">
@@ -294,7 +155,7 @@ function App() {
 						</a>
 					</div>
 				</aside>
-				<main ref={mainRef} className="w-full lg:w-150 px-6 lg:px-0 pb-16 lg:overflow-y-auto lg:py-25 lg:mr-10">
+				<main ref={mainRef} className="w-full lg:w-150 px-6 lg:px-0 pb-16 lg:overflow-y-auto lg:pt-25 lg:pb-[45vh] lg:mr-10">
 					<section ref={setRef('about')} id='about'>
 						<div className='text-[var(--font-color-2)]'>
 							{renderRichText(t(site.about, lang))}
@@ -374,7 +235,14 @@ function App() {
 							<span className="w-8 border-[var(--font-color)] border-b-[0.5px] mx-5"></span>
 							<span>{t(site.sections.web, lang)}</span>
 						</h2>
-						<ProjectList items={webProjects} onClick={handleProjectClick} cardStyle={style.card} />
+						{webProjects.map((project, idx) => (
+							<ProjectCard
+								key={idx}
+								{...project}
+								image={project.images[0]}
+								onClick={() => handleProjectClick(project)}
+							/>
+						))}
 					</section>
 
 					<section ref={setRef('low')} className='flex flex-col gap-5' id='low'>
@@ -383,7 +251,14 @@ function App() {
 							<span className="w-8 border-[var(--font-color)] border-b-[0.5px] mx-5"></span>
 							<span>{t(site.sections.low, lang)}</span>
 						</h2>
-						<ProjectList items={lowProjects} onClick={handleProjectClick} cardStyle={style.card} />
+						{lowProjects.map((project, idx) => (
+							<ProjectCard
+								key={idx}
+								{...project}
+								image={project.images[0]}
+								onClick={() => handleProjectClick(project)}
+							/>
+						))}
 					</section>
 
 					{site.highlights && site.highlights.length > 0 && (

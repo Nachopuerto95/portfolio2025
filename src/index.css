@@ -202,34 +202,11 @@ h1.hero-massive {
 	}
 }
 
-/* Nav variants */
-.nav-timeline {
-	position: relative;
-	padding-left: 2rem;
-}
-
-.nav-track {
-	position: absolute;
-	left: calc(1rem - 1px);
-	top: 0;
-	bottom: 0;
-	width: 2px;
-	background: rgba(255, 255, 255, 0.08);
-	border-radius: 2px;
-	pointer-events: none;
-}
-
-.nav-track-fill {
-	width: 100%;
-	background: linear-gradient(to bottom, var(--accent), var(--hover-color));
-	border-radius: 2px;
-	transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-}
-
+/* Nav variants: numbered base */
 .nav-numbered-item {
 	display: flex;
 	align-items: center;
-	gap: 1rem;
+	gap: 0.9rem;
 	position: relative;
 	text-transform: none;
 	letter-spacing: 0;
@@ -237,22 +214,32 @@ h1.hero-massive {
 	transform-origin: left center;
 }
 
+/* Dot as inline-flex child with fixed slot — guarantees track alignment */
 .nav-numbered-dot {
+	width: 16px;
+	height: 16px;
+	position: relative;
+	flex-shrink: 0;
+	z-index: 2;
+	transition: all 0.3s ease;
+}
+
+.nav-numbered-dot::before {
+	content: '';
 	position: absolute;
-	left: -1.85rem;
+	left: 50%;
 	top: 50%;
 	width: 11px;
 	height: 11px;
 	border-radius: 50%;
 	background: var(--bg-color);
 	border: 2px solid rgba(255, 255, 255, 0.2);
-	transform: translateY(-50%);
+	transform: translate(-50%, -50%);
 	transition: all 0.3s ease;
-	z-index: 1;
 }
 
-.nav-numbered-item.active .nav-numbered-dot,
-.nav-numbered-item:hover .nav-numbered-dot {
+.nav-numbered-item.active .nav-numbered-dot::before,
+.nav-numbered-item:hover .nav-numbered-dot::before {
 	border-color: var(--accent);
 	background: var(--accent);
 	box-shadow: 0 0 0 4px var(--hover-color-bg), 0 0 14px var(--accent);
@@ -265,7 +252,7 @@ h1.hero-massive {
 	color: var(--font-color-2);
 	min-width: 2rem;
 	letter-spacing: -0.02em;
-	transition: color 0.25s ease;
+	transition: color 0.25s ease, font-size 0.25s ease;
 }
 
 .nav-numbered-label {
@@ -291,6 +278,77 @@ h1.hero-massive {
 .nav-numbered-item.active .nav-numbered-num {
 	font-size: 1.6rem;
 	color: var(--accent);
+}
+
+/* Timeline base (track + fill) — used by through + left variants */
+.nav-timeline {
+	position: relative;
+}
+
+.nav-track {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 2px;
+	pointer-events: none;
+	/* Centered at 8px (= center of 16px dot slot) */
+	left: 7px;
+}
+
+.nav-timeline-left .nav-track {
+	/* Shifted far left, items padded right to make room */
+	left: 0;
+}
+
+.nav-timeline-left .nav-numbered-item {
+	padding-left: 1.5rem;
+}
+
+.nav-track-fill {
+	width: 100%;
+	background: linear-gradient(to bottom, var(--accent), var(--hover-color));
+	border-radius: 2px;
+	transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Variant: no line (plain numbered) */
+.nav-numbered-item.variant-num-plain {
+	padding-left: 0;
+}
+
+/* Variant: big statement */
+.nav-numbered-item.variant-num-big {
+	padding-left: 0;
+	gap: 1.1rem;
+}
+
+.nav-numbered-item.variant-num-big .nav-numbered-num {
+	font-size: 2rem;
+	font-weight: 700;
+	min-width: 2.5rem;
+	opacity: 0.35;
+	transition: all 0.3s ease;
+}
+
+.nav-numbered-item.variant-num-big .nav-numbered-label {
+	font-size: 12px;
+	opacity: 0.6;
+	transition: all 0.3s ease;
+}
+
+.nav-numbered-item.variant-num-big.active .nav-numbered-num,
+.nav-numbered-item.variant-num-big:hover .nav-numbered-num {
+	font-size: 2.6rem;
+	opacity: 1;
+	color: var(--accent);
+}
+
+.nav-numbered-item.variant-num-big.active .nav-numbered-label,
+.nav-numbered-item.variant-num-big:hover .nav-numbered-label {
+	opacity: 1;
+	color: var(--hover-color);
 }
 
 .nav-dot {

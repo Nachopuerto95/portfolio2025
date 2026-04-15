@@ -10,7 +10,10 @@ const STYLE_GROUPS = [
 		label: 'Nav',
 		options: [
 			{ value: 'bars', label: 'Bars (Chiang)' },
-			{ value: 'numbers', label: 'Numbered' },
+			{ value: 'num-through', label: 'Numbered · line through' },
+			{ value: 'num-left', label: 'Numbered · line on left' },
+			{ value: 'num-plain', label: 'Numbered · no line' },
+			{ value: 'num-big', label: 'Numbered · big statement' },
 			{ value: 'dots', label: 'Dots' },
 			{ value: 'minimal', label: 'Minimal' },
 		],

@@ -35,16 +35,22 @@ const NAV_ITEMS = [
 	{ id: 'highlights' },
 ];
 
-function NavItem({ item, idx, selected, setSelected, label, navStyle, dotRef }) {
+function NavItem({ item, idx, selected, setSelected, label, navStyle, itemRef }) {
 	const isActive = selected === item.id;
 	const num = String(idx + 1).padStart(2, '0');
 	const commonAnchor = `flex items-center gap-3 ${isActive ? 'selected' : ''}`;
 	const onClick = () => setSelected(item.id);
 
-	if (navStyle === 'numbers') {
+	if (navStyle.startsWith('num-')) {
+		const showDot = navStyle === 'num-through' || navStyle === 'num-left';
 		return (
-			<a className={`nav-numbered-item group ${isActive ? 'active' : ''}`} href={`#${item.id}`} onClick={onClick}>
-				<span ref={dotRef} className="nav-numbered-dot"></span>
+			<a
+				ref={itemRef}
+				className={`nav-numbered-item group ${isActive ? 'active' : ''} variant-${navStyle}`}
+				href={`#${item.id}`}
+				onClick={onClick}
+			>
+				{showDot && <span className="nav-numbered-dot"></span>}
 				<span className="nav-numbered-num">{num}</span>
 				<span className="nav-numbered-label">{label}</span>
 			</a>
@@ -171,23 +177,27 @@ function App() {
 	const sectionRefs = useRef({});
 	const mainRef = useRef(null);
 	const trackRef = useRef(null);
-	const dotRefs = useRef([]);
+	const itemRefs = useRef([]);
 
 	useEffect(() => {
 		const recalc = () => {
 			const track = trackRef.current;
 			const idx = NAV_ITEMS.findIndex((it) => it.id === selected);
-			const dot = dotRefs.current[idx];
-			if (!track || !dot) return;
+			const item = itemRefs.current[idx];
+			if (!track || !item) return;
 			const trackRect = track.getBoundingClientRect();
-			const dotRect = dot.getBoundingClientRect();
-			const y = dotRect.top + dotRect.height / 2 - trackRect.top;
+			const itemRect = item.getBoundingClientRect();
+			const y = itemRect.top + itemRect.height / 2 - trackRect.top;
 			setFillHeight(Math.max(0, y));
 		};
 		recalc();
+		const t = setTimeout(recalc, 50);
 		window.addEventListener('resize', recalc);
-		return () => window.removeEventListener('resize', recalc);
-	}, [selected]);
+		return () => {
+			clearTimeout(t);
+			window.removeEventListener('resize', recalc);
+		};
+	}, [selected, style.nav, lang]);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -249,8 +259,8 @@ function App() {
 						<p className={`mt-3 font-normal text-[var(--font-color-2)] ${heroMassive ? 'max-w-lg' : 'max-w-80'}`}>
 							{t(site.tagline, lang)}
 						</p>
-						<nav className={`text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-6 nav-style-${style.nav} ${style.nav === 'numbers' ? 'nav-timeline' : ''}`}>
-							{style.nav === 'numbers' && (
+						<nav className={`text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-6 nav-style-${style.nav} ${style.nav === 'num-through' || style.nav === 'num-left' ? 'nav-timeline' : ''} ${style.nav === 'num-left' ? 'nav-timeline-left' : ''}`}>
+							{(style.nav === 'num-through' || style.nav === 'num-left') && (
 								<div ref={trackRef} className="nav-track" aria-hidden="true">
 									<div
 										className="nav-track-fill"
@@ -268,7 +278,7 @@ function App() {
 											setSelected={setSelected}
 											label={t(site.nav[item.id], lang)}
 											navStyle={style.nav}
-											dotRef={(el) => { dotRefs.current[idx] = el; }}
+											itemRef={(el) => { itemRefs.current[idx] = el; }}
 										/>
 									</div>
 								) : null

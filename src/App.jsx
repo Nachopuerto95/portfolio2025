@@ -110,7 +110,7 @@ function App() {
 								<img
 									src={site.avatar}
 									alt={site.name}
-									className="w-16 h-16 rounded-full object-cover border-2 border-[var(--accent)]/40 shadow-lg"
+									className="w-20 h-20 rounded-full object-cover border-2 border-[var(--accent)]/40 shadow-lg"
 								/>
 							)}
 							<span className="status-pill">

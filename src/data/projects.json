@@ -320,7 +320,7 @@
         "en": "An IRC server written from scratch in C++98 following the RFC 2812 protocol. Handles multiple concurrent clients on a single thread using I/O multiplexing (poll), with channels, operators, authentication and full real-time event handling."
       },
       "link": "",
-      "git": "https://github.com/Nachopuerto95",
+      "git": "https://github.com/Nachopuerto95/ft_irc",
       "images": [
         "/images/placeholder.svg"
       ],

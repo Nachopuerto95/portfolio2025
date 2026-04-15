@@ -2,6 +2,97 @@
   "projects": [
     {
       "web": true,
+      "link": "",
+      "git": "https://github.com/Nachopuerto95/gymtrackerv2",
+      "images": [
+        "/images/placeholder.svg"
+      ],
+      "title": {
+        "es": "GymTracker · v2 mobile-first",
+        "en": "GymTracker · mobile-first v2"
+      },
+      "description": {
+        "es": "Evolución mobile-first de Fit-Tracker: una app para gestionar rutinas, entrenamientos y progreso directamente desde el móvil durante la propia sesión de gimnasio. Diseñada para ser rápida y ergonómica con una mano, con drag & drop para construir rutinas, calendario interactivo, gráficos de progreso y autenticación real.",
+        "en": "Mobile-first evolution of Fit-Tracker: an app to manage routines, workouts and progress straight from your phone during a gym session. Built to be fast and one-handed, with drag & drop routine building, interactive calendar, progress charts and real authentication."
+      },
+      "caracteristicas": [
+        {
+          "name": {
+            "es": "Frontend mobile-first",
+            "en": "Mobile-first frontend"
+          },
+          "lines": {
+            "es": [
+              "React 19 + Vite + Tailwind, navegación con react-router-dom y estado global en Zustand.",
+              "Drag & drop con @dnd-kit para construir y reordenar rutinas (push, pull, leg, etc.).",
+              "Calendario interactivo con historial de entrenamientos.",
+              "Gráficas de progreso con Recharts y animaciones con framer-motion.",
+              "Pull-to-refresh, toasts y patrones táctiles pensados para usarse en pleno set."
+            ],
+            "en": [
+              "React 19 + Vite + Tailwind, navigation via react-router-dom and global state in Zustand.",
+              "Drag & drop with @dnd-kit to build and reorder routines (push, pull, leg, etc.).",
+              "Interactive calendar with workout history.",
+              "Progress charts with Recharts and motion via framer-motion.",
+              "Pull-to-refresh, toasts and touch patterns designed to use mid-set."
+            ]
+          }
+        },
+        {
+          "name": {
+            "es": "Backend y API",
+            "en": "Backend & API"
+          },
+          "lines": {
+            "es": [
+              "API REST en Express sobre MongoDB (Mongoose) con autenticación JWT y bcrypt.",
+              "Capa de seguridad: helmet, CORS, rate limiting y validación con express-validator.",
+              "Compression y endpoints organizados en controllers y routes."
+            ],
+            "en": [
+              "REST API in Express on top of MongoDB (Mongoose) with JWT auth and bcrypt.",
+              "Security stack: helmet, CORS, rate limiting and input validation via express-validator.",
+              "Compression, and endpoints organized into controllers and routes."
+            ]
+          }
+        },
+        {
+          "name": {
+            "es": "Infraestructura",
+            "en": "Infrastructure"
+          },
+          "lines": {
+            "es": [
+              "Despliegue en Fly.io de frontend y backend como apps separadas sobre HTTPS.",
+              "Dockerfile por servicio, con nginx al frente sirviendo el estático."
+            ],
+            "en": [
+              "Deployed on Fly.io as separate frontend and backend apps over HTTPS.",
+              "Custom Dockerfile per service, with nginx fronting the static frontend."
+            ]
+          }
+        }
+      ],
+      "tags": [
+        "React 19",
+        "Vite",
+        "Tailwind",
+        "Zustand",
+        "React Router",
+        "framer-motion",
+        "dnd-kit",
+        "Recharts",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT",
+        "Docker",
+        "Fly.io",
+        "Mobile-first"
+      ]
+    },
+    {
+      "web": true,
       "link": "https://fit-tracker.fly.dev/",
       "git": "https://github.com/nacho-alex/project-module-3",
       "images": [

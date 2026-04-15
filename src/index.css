@@ -285,10 +285,6 @@ strong {
 	transition: color 0.25s ease;
 }
 
-.nav-numbered-item:hover {
-	transform: translateX(4px);
-}
-
 .nav-numbered-item:hover .nav-numbered-num,
 .nav-numbered-item:hover .nav-numbered-label,
 .nav-numbered-item.active .nav-numbered-num,

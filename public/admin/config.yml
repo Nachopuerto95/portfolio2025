@@ -8,6 +8,9 @@ public_folder: "/images"
 
 publish_mode: simple
 
+# Reusable fragment for bilingual strings
+# (Decap no soporta YAML anchors reales, dejamos los campos inline.)
+
 collections:
   - name: site
     label: "Contenido del sitio"
@@ -18,18 +21,66 @@ collections:
         format: json
         fields:
           - { label: "Nombre", name: name, widget: string }
-          - { label: "Rol (subtítulo)", name: role, widget: string }
-          - { label: "Tagline", name: tagline, widget: text }
+
+          - label: "Estado (status pill)"
+            name: status
+            widget: object
+            fields:
+              - label: "Etiqueta"
+                name: label
+                widget: object
+                fields:
+                  - { label: "Español", name: es, widget: string }
+                  - { label: "English", name: en, widget: string }
+
+          - label: "Rol (subtítulo)"
+            name: role
+            widget: object
+            fields:
+              - { label: "Español", name: es, widget: string }
+              - { label: "English", name: en, widget: string }
+
+          - label: "Tagline"
+            name: tagline
+            widget: object
+            fields:
+              - { label: "Español", name: es, widget: text }
+              - { label: "English", name: en, widget: text }
 
           - label: "Navegación (etiquetas del menú)"
             name: nav
             widget: object
             fields:
-              - { label: "About", name: about, widget: string }
-              - { label: "Experiencia", name: experience, widget: string }
-              - { label: "Web", name: web, widget: string }
-              - { label: "Low-level", name: low, widget: string }
-              - { label: "Highlights", name: highlights, widget: string }
+              - label: "About"
+                name: about
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Experience"
+                name: experience
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Web"
+                name: web
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Low-level"
+                name: low
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Highlights"
+                name: highlights
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
 
           - label: "Redes sociales"
             name: social
@@ -40,23 +91,49 @@ collections:
 
           - label: "Sobre mí"
             name: about
-            widget: markdown
+            widget: object
+            fields:
+              - { label: "Español", name: es, widget: markdown }
+              - { label: "English", name: en, widget: markdown }
             hint: "Usa **texto** para negrita y deja una línea en blanco entre párrafos."
 
           - label: "Experiencia profesional"
             name: experience
             widget: list
-            summary: "{{fields.company}} — {{fields.role}}"
+            summary: "{{fields.company}}"
             fields:
               - { label: "Empresa", name: company, widget: string }
-              - { label: "Puesto", name: role, widget: string }
-              - { label: "Periodo", name: period, widget: string, hint: "Ej: Sep 2025 — Actualidad" }
-              - { label: "Descripción", name: description, widget: text }
+              - label: "Puesto"
+                name: role
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Periodo"
+                name: period
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Descripción"
+                name: description
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: text }
+                  - { label: "EN", name: en, widget: text }
               - label: "Logros / Responsabilidades"
                 name: highlights
-                widget: list
+                widget: object
                 required: false
-                field: { label: "Línea", name: line, widget: string }
+                fields:
+                  - label: "ES"
+                    name: es
+                    widget: list
+                    field: { label: "Línea", name: line, widget: string }
+                  - label: "EN"
+                    name: en
+                    widget: list
+                    field: { label: "Line", name: line, widget: string }
               - label: "Stack tecnológico"
                 name: stack
                 widget: list
@@ -65,23 +142,54 @@ collections:
           - label: "Highlights / Reconocimientos"
             name: highlights
             widget: list
-            summary: "{{fields.title}}"
+            summary: "{{fields.title.es}}"
             fields:
               - label: "Icono (Font Awesome)"
                 name: icon
                 widget: string
-                hint: "Ej: fa-solid fa-trophy, fa-solid fa-star, fa-solid fa-award, fa-solid fa-medal"
-              - { label: "Título", name: title, widget: string }
-              - { label: "Dónde / Contexto", name: where, widget: string, required: false }
+                hint: "Ej: fa-solid fa-trophy, fa-solid fa-star, fa-solid fa-medal"
+              - label: "Título"
+                name: title
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Dónde / Contexto"
+                name: where
+                widget: object
+                required: false
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
 
           - label: "Títulos de sección"
             name: sections
             widget: object
             fields:
-              - { label: "Experiencia", name: experience, widget: string }
-              - { label: "Web", name: web, widget: string }
-              - { label: "Low-level", name: low, widget: string }
-              - { label: "Highlights", name: highlights, widget: string }
+              - label: "Experiencia"
+                name: experience
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Web"
+                name: web
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Low-level"
+                name: low
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
+              - label: "Highlights"
+                name: highlights
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
 
   - name: projects
     label: "Proyectos"

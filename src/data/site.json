@@ -1,50 +1,106 @@
 {
   "name": "Nacho Puerto",
-  "role": "Full stack & AI engineer",
-  "tagline": "Construyendo productos de principio a fin, del front-end a la infraestructura.",
+  "status": {
+    "label": {
+      "es": "Construyendo @ Datista",
+      "en": "Building @ Datista"
+    }
+  },
+  "role": {
+    "es": "Full stack & AI engineer",
+    "en": "Full stack & AI engineer"
+  },
+  "tagline": {
+    "es": "Construyendo productos de principio a fin, del front-end a la infraestructura.",
+    "en": "Shipping products end-to-end, from front-end to infrastructure."
+  },
   "nav": {
-    "about": "About me",
-    "experience": "Experience",
-    "web": "Full-stack Web development",
-    "low": "Low-level & Algorithms",
-    "highlights": "Highlights"
+    "about": { "es": "About me", "en": "About me" },
+    "experience": { "es": "Experience", "en": "Experience" },
+    "web": { "es": "Full-stack Web", "en": "Full-stack Web" },
+    "low": { "es": "Low-level & Algorithms", "en": "Low-level & Algorithms" },
+    "highlights": { "es": "Highlights", "en": "Highlights" }
   },
   "social": {
     "github": "https://github.com/Nachopuerto95",
     "linkedin": "https://www.linkedin.com/in/nacho-puerto-mendoza/"
   },
-  "about": "Desarrollador Fullstack construyendo productos reales de principio a fin.\n\nActualmente soy **Founding Engineer en Datista Tech**, donde lidero el desarrollo full stack de una plataforma SaaS con agentes de voz en tiempo real: backend en **FastAPI**, frontend en **React + TypeScript**, base de datos **PostgreSQL**, pipeline de voz **STT → LLM → TTS** sobre **FreeSWITCH** y **LiveKit**, y stack de observabilidad completo (Prometheus, Grafana, Loki) sobre infraestructura Docker con red privada WireGuard.\n\nEn paralelo, estudio Desarrollo de Software en **42 Madrid (Fundación Telefónica)**, donde trabajo con C, C++ y algoritmia, y donde fui seleccionado como primero de mi promoción.\n\nMi trayectoria empezó en el diseño gráfico y giró hacia el desarrollo cuando descubrí que lo que realmente me movía era resolver problemas con código. Combino esa base creativa con el rigor técnico de construir sistemas en producción.",
+  "about": {
+    "es": "Desarrollador Fullstack construyendo productos reales de principio a fin.\n\nActualmente soy **Founding Engineer en Datista Tech**, donde lidero el desarrollo full stack de una plataforma SaaS con agentes de voz en tiempo real: backend en **FastAPI**, frontend en **React + TypeScript**, base de datos **PostgreSQL**, pipeline de voz **STT → LLM → TTS** sobre **FreeSWITCH** y **LiveKit**, y stack de observabilidad completo (Prometheus, Grafana, Loki) sobre infraestructura Docker con red privada WireGuard.\n\nEn paralelo, estudio Desarrollo de Software en **42 Madrid (Fundación Telefónica)**, donde trabajo con C, C++ y algoritmia, y donde fui seleccionado como primero de mi promoción.\n\nMi trayectoria empezó en el diseño gráfico y giró hacia el desarrollo cuando descubrí que lo que realmente me movía era resolver problemas con código. Combino esa base creativa con el rigor técnico de construir sistemas en producción.",
+    "en": "Full-stack developer shipping real products end-to-end.\n\nI'm currently **Founding Engineer at Datista Tech**, leading the full-stack development of a SaaS platform with real-time voice agents: **FastAPI** backend, **React + TypeScript** frontend, **PostgreSQL** database, **STT → LLM → TTS** voice pipeline on **FreeSWITCH** and **LiveKit**, and a full observability stack (Prometheus, Grafana, Loki) on Docker infrastructure over a private WireGuard network.\n\nIn parallel, I'm studying Software Development at **42 Madrid (Fundación Telefónica)**, working with C, C++ and algorithms, where I was ranked first in my cohort.\n\nMy background started in graphic design and turned fully to development when I realized that solving problems with code was what really drove me. I combine that creative foundation with the technical rigor of building production systems."
+  },
   "experience": [
     {
       "company": "Datista Tech",
-      "role": "Founding Fullstack & AI Engineer",
-      "period": "Sep 2025 — Actualidad",
-      "description": "De cero a producto en producción como primer desarrollador. Plataforma SaaS con agentes de voz en tiempo real, widgets embebibles y paneles de control para clientes y operaciones internas.",
-      "highlights": [
-        "Backend FastAPI + frontend React/TypeScript + PostgreSQL, con workers asíncronos en Celery y Redis.",
-        "Pipeline de voz en tiempo real STT → LLM → TTS integrado con FreeSWITCH y LiveKit.",
-        "Infraestructura multi-servidor con Docker y red privada WireGuard; observabilidad completa con Prometheus, Grafana, Loki y Alertmanager.",
-        "Automatización interna con IA usando n8n, Claude y APIs de OpenAI para optimizar flujos del equipo."
-      ],
+      "role": {
+        "es": "Founding Fullstack & AI Engineer",
+        "en": "Founding Fullstack & AI Engineer"
+      },
+      "period": {
+        "es": "Sep 2025 — Actualidad",
+        "en": "Sep 2025 — Present"
+      },
+      "description": {
+        "es": "De cero a producto en producción como primer desarrollador. Plataforma SaaS con agentes de voz en tiempo real, widgets embebibles y paneles de control para clientes y operaciones internas.",
+        "en": "From zero to production as the first developer. SaaS platform with real-time voice agents, embeddable widgets, and dashboards for clients and internal operations."
+      },
+      "highlights": {
+        "es": [
+          "Backend FastAPI + frontend React/TypeScript + PostgreSQL, con workers asíncronos en Celery y Redis.",
+          "Pipeline de voz en tiempo real STT → LLM → TTS integrado con FreeSWITCH y LiveKit.",
+          "Infraestructura multi-servidor con Docker y red privada WireGuard; observabilidad completa con Prometheus, Grafana, Loki y Alertmanager.",
+          "Automatización interna con IA usando n8n, Claude y APIs de OpenAI para optimizar flujos del equipo."
+        ],
+        "en": [
+          "FastAPI backend + React/TypeScript frontend + PostgreSQL, with asynchronous workers on Celery and Redis.",
+          "Real-time STT → LLM → TTS voice pipeline integrated with FreeSWITCH and LiveKit.",
+          "Multi-server infrastructure with Docker and private WireGuard network; full observability with Prometheus, Grafana, Loki and Alertmanager.",
+          "Internal AI automation with n8n, Claude and OpenAI APIs to optimize team workflows."
+        ]
+      },
       "stack": ["FastAPI", "Python", "React", "TypeScript", "PostgreSQL", "Celery", "Redis", "Docker", "WireGuard", "Prometheus", "Grafana", "Loki", "FreeSWITCH", "LiveKit", "Claude", "OpenAI", "n8n"]
     }
   ],
   "highlights": [
     {
       "icon": "fa-solid fa-trophy",
-      "title": "Primero de mi promoción",
-      "where": "42 Madrid (Fundación Telefónica)"
+      "title": {
+        "es": "Primero de mi promoción",
+        "en": "Ranked first in my cohort"
+      },
+      "where": {
+        "es": "42 Madrid (Fundación Telefónica)",
+        "en": "42 Madrid (Fundación Telefónica)"
+      }
     },
     {
       "icon": "fa-solid fa-star",
-      "title": "Fittracker seleccionado para la International HackShow",
-      "where": "Proyecto elegido para representar al bootcamp"
+      "title": {
+        "es": "Fittracker seleccionado para la International HackShow",
+        "en": "Fittracker selected for the International HackShow"
+      },
+      "where": {
+        "es": "Proyecto elegido para representar al bootcamp",
+        "en": "Project chosen to represent the bootcamp"
+      }
     }
   ],
   "sections": {
-    "experience": "Experiencia profesional",
-    "web": "Full-stack Web development projects",
-    "low": "Low-level & Algorithms",
-    "highlights": "Highlights"
+    "experience": {
+      "es": "Experiencia profesional",
+      "en": "Professional experience"
+    },
+    "web": {
+      "es": "Proyectos Full-stack Web",
+      "en": "Full-stack Web projects"
+    },
+    "low": {
+      "es": "Low-level & Algoritmos",
+      "en": "Low-level & Algorithms"
+    },
+    "highlights": {
+      "es": "Highlights",
+      "en": "Highlights"
+    }
   }
 }

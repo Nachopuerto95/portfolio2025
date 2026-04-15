@@ -25,8 +25,18 @@ export default function Canvas() {
     };
     window.addEventListener("mousemove", handleMouseMove);
 
+    function getAccentRgb() {
+      const c = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+      const m = c.match(/\d+/g);
+      return m ? `${m[0]}, ${m[1]}, ${m[2]}` : '94, 234, 212';
+    }
+
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      canvas.style.backgroundImage = `radial-gradient(800px circle at ${mouse.current.x}px ${mouse.current.y}px, var(--mouse-gradient), transparent 70%)`;
+
+      const accentRgb = getAccentRgb();
 
       for (let i = 0; i < numLines; i++) {
         const x = i * factor;
@@ -46,7 +56,7 @@ export default function Canvas() {
 
 
 		const alpha = (horizontalFactor + 0.1) / 5;
-			ctx.strokeStyle = `rgba(94, 234, 212, ${alpha})`;
+			ctx.strokeStyle = `rgba(${accentRgb}, ${alpha})`;
 		
 		if (y === 0) ctx.moveTo(finalX, y);
           else ctx.lineTo(finalX, y);
@@ -69,13 +79,8 @@ export default function Canvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 z-[-1]
-	  	bg-[var(--bg-color)]"
-		style={{
-			backgroundImage: `radial-gradient(800px circle at ${mouse.current.x}px ${mouse.current.y}px, var(--mouse-gradient), transparent 70%)`,
-			width: "100%",
-			height: "100%"
-		}}
+      className="fixed top-0 left-0 z-[-1] bg-[var(--bg-color)]"
+      style={{ width: "100%", height: "100%" }}
     />
   );
 }

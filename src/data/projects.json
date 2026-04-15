@@ -5,7 +5,18 @@
       "link": "",
       "git": "https://github.com/Nachopuerto95/gymtrackerv2",
       "images": [
-        "/images/placeholder.svg"
+        "/images/web_5/gym_01.jpg",
+        "/images/web_5/gym_02.jpg",
+        "/images/web_5/gym_03.jpg",
+        "/images/web_5/gym_04.jpg",
+        "/images/web_5/gym_05.jpg",
+        "/images/web_5/gym_06.jpg",
+        "/images/web_5/gym_07.jpg",
+        "/images/web_5/gym_08.jpg",
+        "/images/web_5/gym_09.jpg",
+        "/images/web_5/gym_10.jpg",
+        "/images/web_5/gym_11.jpg",
+        "/images/web_5/gym_12_desktop.png"
       ],
       "title": {
         "es": "GymTracker · v2 mobile-first",

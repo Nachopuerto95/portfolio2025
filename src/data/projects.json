@@ -74,20 +74,12 @@
         }
       ],
       "tags": [
-        "React 19",
-        "Vite",
+        "React",
         "Tailwind",
         "Zustand",
-        "React Router",
-        "framer-motion",
-        "dnd-kit",
-        "Recharts",
-        "Node.js",
         "Express",
         "MongoDB",
         "JWT",
-        "Docker",
-        "Fly.io",
         "Mobile-first"
       ]
     },

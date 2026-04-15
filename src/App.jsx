@@ -7,6 +7,7 @@ import LanguageToggle from './components/LanguageToggle';
 import projectsData from './data/projects.json';
 import site from './data/site.json';
 import { useLang, t } from './i18n';
+import { trackSection, trackClick } from './visitPing';
 
 const projects = projectsData.projects;
 
@@ -70,7 +71,10 @@ function App() {
 				const visible = entries
 					.filter((e) => e.isIntersecting)
 					.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-				if (visible[0]) setSelected(visible[0].target.id);
+				if (visible[0]) {
+					setSelected(visible[0].target.id);
+					trackSection(visible[0].target.id);
+				}
 			},
 			{
 				rootMargin: '-30% 0px -50% 0px',
@@ -86,6 +90,8 @@ function App() {
 	const handleProjectClick = (project) => {
 		setSelectedProject(project);
 		setIsOpen(true);
+		const title = typeof project.title === 'string' ? project.title : (project.title?.es || project.title?.en || 'project');
+		trackClick(`project:${title.split('·')[0].trim()}`);
 	};
 
 	const setRef = (id) => (el) => {
@@ -129,6 +135,7 @@ function App() {
 							<a
 								href={`mailto:${site.social.email}`}
 								className="cta-email mt-5"
+								onClick={() => trackClick('email-cta')}
 							>
 								<i className="fa-solid fa-envelope"></i>
 								<span>{lang === 'en' ? 'Get in touch' : 'Escríbeme'}</span>
@@ -164,10 +171,10 @@ function App() {
 						</nav>
 					</div>
 					<div className="flex flex-wrap gap-x-6 gap-y-3 justify-center lg:justify-start mt-10 lg:mt-15">
-						<a href={site.social.github} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
+						<a href={site.social.github} onClick={() => trackClick('social:github')} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
 							<i className="fa-brands fa-github text-[25px] mr-3"></i> GitHub
 						</a>
-						<a href={site.social.linkedin} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
+						<a href={site.social.linkedin} onClick={() => trackClick('social:linkedin')} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
 							<i className="fa-brands fa-linkedin text-[25px] mr-3"></i> LinkedIn
 						</a>
 					</div>
@@ -264,6 +271,7 @@ function App() {
 							href={site.social.github}
 							target="_blank"
 							rel="noopener noreferrer"
+							onClick={() => trackClick('more-on-github')}
 							className="mt-2 flex items-center justify-center gap-2 text-sm text-[var(--font-color-2)] hover:text-[var(--hover-color)] transition py-3 group"
 						>
 							<span>{lang === 'en' ? 'More projects on GitHub' : 'Más proyectos en GitHub'}</span>
@@ -289,6 +297,7 @@ function App() {
 							href={site.social.github}
 							target="_blank"
 							rel="noopener noreferrer"
+							onClick={() => trackClick('more-on-github')}
 							className="mt-2 flex items-center justify-center gap-2 text-sm text-[var(--font-color-2)] hover:text-[var(--hover-color)] transition py-3 group"
 						>
 							<span>{lang === 'en' ? 'More on GitHub (42 cursus, exercises, etc.)' : 'Más en GitHub (cursus 42, ejercicios, etc.)'}</span>

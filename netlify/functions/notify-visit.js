@@ -1,11 +1,6 @@
-// Netlify serverless function that notifies a Telegram chat
-// when someone lands on the portfolio. Configure two env vars
-// in Netlify (Site settings -> Environment variables):
-//   TELEGRAM_TOKEN    — the bot token from @BotFather
-//   TELEGRAM_CHAT_ID  — your personal chat id (get via @userinfobot)
-//
-// Silently no-ops if either env var is missing, so the portfolio
-// keeps working locally and in preview deploys.
+// Netlify serverless function: formats a session summary and
+// sends it to Telegram when the visitor's tab is closed/hidden.
+// Requires env vars TELEGRAM_TOKEN and TELEGRAM_CHAT_ID.
 
 export default async (request, context) => {
   if (request.method !== 'POST') {
@@ -34,15 +29,21 @@ export default async (request, context) => {
   const ua = body.userAgent || request.headers.get('user-agent') || '—';
   const path = body.path || '/';
   const language = body.language || '—';
-  const ts = new Date().toISOString().replace('T', ' ').slice(0, 16);
+  const duration = Number(body.duration) || 0;
+  const isReturning = Boolean(body.isReturning);
+  const lastSeenAt = body.lastSeenAt || null;
+  const sections = Array.isArray(body.sectionsViewed) ? body.sectionsViewed : [];
+  const clicks = Array.isArray(body.clicks) ? body.clicks : [];
+  const now = new Date();
+  const ts = now.toISOString().replace('T', ' ').slice(0, 16);
 
-  // Rough device detection from the UA string
+  // Device + browser detection
   let device = 'Desktop';
-  if (/Mobi|Android/i.test(ua)) device = 'Mobile';
   if (/iPhone/i.test(ua)) device = 'iPhone';
-  if (/iPad/i.test(ua)) device = 'iPad';
+  else if (/iPad/i.test(ua)) device = 'iPad';
+  else if (/Android/i.test(ua)) device = 'Android';
+  else if (/Mobi/i.test(ua)) device = 'Mobile';
 
-  // Pick a short browser label
   let browser = 'Browser';
   if (/Edg\//i.test(ua)) browser = 'Edge';
   else if (/Chrome\//i.test(ua) && !/Edg\//i.test(ua)) browser = 'Chrome';
@@ -50,15 +51,52 @@ export default async (request, context) => {
   else if (/Safari\//i.test(ua) && !/Chrome\//i.test(ua)) browser = 'Safari';
 
   const locationLine = city ? `${city}, ${country}` : country;
-  const text = [
-    '🌐 *Nueva visita al portfolio*',
+
+  function fmtDuration(s) {
+    if (!s || s < 1) return '<1s';
+    if (s < 60) return `${s}s`;
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return sec ? `${m}m ${sec}s` : `${m}m`;
+  }
+
+  function fmtSince(iso) {
+    if (!iso) return '';
+    const then = new Date(iso).getTime();
+    if (!then) return '';
+    const diff = Math.max(0, now.getTime() - then);
+    const mins = Math.floor(diff / 60000);
+    if (mins < 60) return `hace ${mins || 1}m`;
+    const hours = Math.floor(mins / 60);
+    if (hours < 24) return `hace ${hours}h`;
+    const days = Math.floor(hours / 24);
+    if (days < 30) return `hace ${days}d`;
+    const months = Math.floor(days / 30);
+    return `hace ${months}mo`;
+  }
+
+  const header = isReturning
+    ? `🔁 *Visita repetida* ${lastSeenAt ? `(${fmtSince(lastSeenAt)})` : ''}`.trim()
+    : `🌐 *Nueva visita*`;
+
+  const clicksLine = clicks.length
+    ? clicks.map((c) => c.name).slice(0, 8).join(' · ')
+    : '—';
+
+  const lines = [
+    header,
     `🕐 ${ts}`,
     `📍 ${locationLine}`,
     `↪️ ${referrer}`,
     `📱 ${device} · ${browser}`,
-    `🗺️ Path: \`${path}\``,
+    `🗺️ \`${path}\``,
+    `⏱️ ${fmtDuration(duration)}`,
+    `👁️ ${sections.length ? sections.join(' → ') : '—'}`,
+    `🖱️ ${clicksLine}`,
     language !== '—' ? `🌍 ${language}` : null,
-  ].filter(Boolean).join('\n');
+  ].filter(Boolean);
+
+  const text = lines.join('\n');
 
   try {
     await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -72,7 +110,7 @@ export default async (request, context) => {
       }),
     });
   } catch (err) {
-    // swallow — we don't want to surface errors to the client
+    // swallow
   }
 
   return new Response(JSON.stringify({ ok: true }), {

@@ -10,6 +10,9 @@ import '@fontsource/space-grotesk/700.css'
 import './index.css'
 import App from './App.jsx'
 import { LanguageProvider } from './i18n.jsx'
+import { pingVisit } from './visitPing.js'
+
+pingVisit();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

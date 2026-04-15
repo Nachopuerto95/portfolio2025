@@ -256,6 +256,15 @@ function App() {
 								onClick={() => handleProjectClick(project)}
 							/>
 						))}
+						<a
+							href={site.social.github}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="mt-2 flex items-center justify-center gap-2 text-sm text-[var(--font-color-2)] hover:text-[var(--hover-color)] transition py-3 group"
+						>
+							<span>{lang === 'en' ? 'More projects on GitHub' : 'Más proyectos en GitHub'}</span>
+							<i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+						</a>
 					</section>
 
 					<section ref={setRef('low')} className='flex flex-col gap-5' id='low'>
@@ -272,6 +281,15 @@ function App() {
 								onClick={() => handleProjectClick(project)}
 							/>
 						))}
+						<a
+							href={site.social.github}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="mt-2 flex items-center justify-center gap-2 text-sm text-[var(--font-color-2)] hover:text-[var(--hover-color)] transition py-3 group"
+						>
+							<span>{lang === 'en' ? 'More on GitHub (42 cursus, exercises, etc.)' : 'Más en GitHub (cursus 42, ejercicios, etc.)'}</span>
+							<i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+						</a>
 					</section>
 
 					{site.highlights && site.highlights.length > 0 && (

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <rect width="160" height="160" fill="#141a2d" rx="8"/>
+  <rect x="0.5" y="0.5" width="159" height="159" fill="none" stroke="rgba(129,140,248,0.3)" stroke-width="1" stroke-dasharray="4 4" rx="8"/>
+  <g transform="translate(80, 80)" text-anchor="middle" font-family="Space Grotesk, Inter, sans-serif" fill="#818cf8">
+    <text y="-4" font-size="26" font-weight="700">&lt;/&gt;</text>
+    <text y="22" font-size="11" font-weight="500" fill="#94a3b8" letter-spacing="0.1em">COMING SOON</text>
+  </g>
+</svg>

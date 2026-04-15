@@ -270,10 +270,19 @@ function App() {
 							</h2>
 							{site.experience.map((job, idx) => (
 								<article key={idx} className="p-5 rounded-lg border-t border-white/8 bg-[var(--bg-color-2)]/40 transition hover:bg-[var(--hover-color-bg)]">
-									<div className="flex justify-between items-baseline flex-wrap gap-2">
-										<div>
-											<h3 className="font-bold text-base">{job.company}</h3>
-											<p className="text-[13px] text-[var(--font-color-2)]">{t(job.role, lang)}</p>
+									<div className="flex justify-between items-start flex-wrap gap-2">
+										<div className="flex items-center gap-3">
+											{job.logo && (
+												<img
+													src={job.logo}
+													alt={`${job.company} logo`}
+													className="w-10 h-10 rounded-md object-contain bg-white/5 p-1 border border-white/10"
+												/>
+											)}
+											<div>
+												<h3 className="font-bold text-base">{job.company}</h3>
+												<p className="text-[13px] text-[var(--font-color-2)]">{t(job.role, lang)}</p>
+											</div>
 										</div>
 										<span className="text-[12px] text-[var(--font-color-2)] uppercase tracking-wide">{t(job.period, lang)}</span>
 									</div>
@@ -293,6 +302,18 @@ function App() {
 											</ul>
 										) : null;
 									})()}
+									{job.media && job.media.length > 0 && (
+										<div className="mt-4 grid grid-cols-2 lg:grid-cols-3 gap-2">
+											{job.media.map((m, mi) => (
+												<img
+													key={mi}
+													src={m}
+													alt={`${job.company} media ${mi + 1}`}
+													className="w-full h-24 object-cover rounded-md border border-white/10 hover:border-[var(--accent)]/50 transition cursor-zoom-in"
+												/>
+											))}
+										</div>
+									)}
 									{job.stack && job.stack.length > 0 && (
 										<div className="flex gap-2 mt-4 flex-wrap">
 											{job.stack.map((tag, ti) => (

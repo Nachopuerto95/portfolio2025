@@ -32,6 +32,8 @@
   "experience": [
     {
       "company": "Datista Tech",
+      "logo": "",
+      "media": [],
       "role": {
         "es": "Founding Fullstack & AI Engineer",
         "en": "Founding Fullstack & AI Engineer"
@@ -71,6 +73,17 @@
       "where": {
         "es": "Proyecto elegido para representar al bootcamp de Ironhack",
         "en": "Project chosen to represent the Ironhack bootcamp"
+      }
+    },
+    {
+      "icon": "fa-solid fa-trophy",
+      "title": {
+        "es": "Primero de mi promoción en 42 Madrid",
+        "en": "Ranked first in my cohort at 42 Madrid"
+      },
+      "where": {
+        "es": "Fundación Telefónica",
+        "en": "Fundación Telefónica"
       }
     }
   ],

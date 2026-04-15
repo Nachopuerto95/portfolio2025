@@ -103,6 +103,13 @@ collections:
             summary: "{{fields.company}}"
             fields:
               - { label: "Empresa", name: company, widget: string }
+              - { label: "Logo de la empresa", name: logo, widget: image, required: false }
+              - label: "Imágenes / GIFs del trabajo"
+                name: media
+                widget: list
+                required: false
+                field: { label: "Imagen o GIF", name: item, widget: image }
+                hint: "Capturas, diagramas o GIFs. Asegúrate de tener permiso antes de publicar contenido de la empresa."
               - label: "Puesto"
                 name: role
                 widget: object

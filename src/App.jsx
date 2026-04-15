@@ -35,7 +35,7 @@ const NAV_ITEMS = [
 	{ id: 'highlights' },
 ];
 
-function NavItem({ item, idx, selected, setSelected, label, navStyle }) {
+function NavItem({ item, idx, selected, setSelected, label, navStyle, dotRef }) {
 	const isActive = selected === item.id;
 	const num = String(idx + 1).padStart(2, '0');
 	const commonAnchor = `flex items-center gap-3 ${isActive ? 'selected' : ''}`;
@@ -44,7 +44,7 @@ function NavItem({ item, idx, selected, setSelected, label, navStyle }) {
 	if (navStyle === 'numbers') {
 		return (
 			<a className={`nav-numbered-item group ${isActive ? 'active' : ''}`} href={`#${item.id}`} onClick={onClick}>
-				<span className="nav-numbered-dot"></span>
+				<span ref={dotRef} className="nav-numbered-dot"></span>
 				<span className="nav-numbered-num">{num}</span>
 				<span className="nav-numbered-label">{label}</span>
 			</a>
@@ -167,35 +167,27 @@ function App() {
 	const [selected, setSelected] = useState('about');
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedProject, setSelectedProject] = useState(null);
-	const [scrollProgress, setScrollProgress] = useState(0);
+	const [fillHeight, setFillHeight] = useState(0);
 	const sectionRefs = useRef({});
 	const mainRef = useRef(null);
+	const trackRef = useRef(null);
+	const dotRefs = useRef([]);
 
 	useEffect(() => {
-		const main = mainRef.current;
-		const onScroll = () => {
-			// Large screens: main is the scroll container. Otherwise fall back to window.
-			const usesMain = main && main.scrollHeight > main.clientHeight + 1;
-			let p = 0;
-			if (usesMain) {
-				const total = main.scrollHeight - main.clientHeight;
-				p = total > 0 ? main.scrollTop / total : 0;
-			} else {
-				const total = document.documentElement.scrollHeight - window.innerHeight;
-				p = total > 0 ? window.scrollY / total : 0;
-			}
-			setScrollProgress(Math.max(0, Math.min(1, p)));
+		const recalc = () => {
+			const track = trackRef.current;
+			const idx = NAV_ITEMS.findIndex((it) => it.id === selected);
+			const dot = dotRefs.current[idx];
+			if (!track || !dot) return;
+			const trackRect = track.getBoundingClientRect();
+			const dotRect = dot.getBoundingClientRect();
+			const y = dotRect.top + dotRect.height / 2 - trackRect.top;
+			setFillHeight(Math.max(0, y));
 		};
-		if (main) main.addEventListener('scroll', onScroll, { passive: true });
-		window.addEventListener('scroll', onScroll, { passive: true });
-		window.addEventListener('resize', onScroll);
-		onScroll();
-		return () => {
-			if (main) main.removeEventListener('scroll', onScroll);
-			window.removeEventListener('scroll', onScroll);
-			window.removeEventListener('resize', onScroll);
-		};
-	}, []);
+		recalc();
+		window.addEventListener('resize', recalc);
+		return () => window.removeEventListener('resize', recalc);
+	}, [selected]);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -259,10 +251,10 @@ function App() {
 						</p>
 						<nav className={`text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-6 nav-style-${style.nav} ${style.nav === 'numbers' ? 'nav-timeline' : ''}`}>
 							{style.nav === 'numbers' && (
-								<div className="nav-track" aria-hidden="true">
+								<div ref={trackRef} className="nav-track" aria-hidden="true">
 									<div
 										className="nav-track-fill"
-										style={{ height: `${scrollProgress * 100}%` }}
+										style={{ height: `${fillHeight}px` }}
 									/>
 								</div>
 							)}
@@ -276,6 +268,7 @@ function App() {
 											setSelected={setSelected}
 											label={t(site.nav[item.id], lang)}
 											navStyle={style.nav}
+											dotRef={(el) => { dotRefs.current[idx] = el; }}
 										/>
 									</div>
 								) : null
@@ -313,7 +306,7 @@ function App() {
 												<img
 													src={job.logo}
 													alt={`${job.company} logo`}
-													className="w-10 h-10 rounded-md object-contain bg-white/5 p-1 border border-white/10"
+													className="w-16 h-16 rounded-lg object-contain bg-black/60 p-2 border border-white/10"
 												/>
 											)}
 											<div>

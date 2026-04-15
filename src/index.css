@@ -92,6 +92,12 @@ nav div:hover .menu-bar {
 	transform: scale(1.2);
 }
 
+.gallery-thumb {
+	width: 88px;
+	height: 64px;
+	object-fit: cover;
+}
+
 /* Status pill */
 .status-pill {
 	display: inline-flex;
@@ -199,18 +205,17 @@ h1.hero-massive {
 /* Nav variants */
 .nav-timeline {
 	position: relative;
-	padding-left: 2.4rem;
+	padding-left: 2rem;
 }
 
 .nav-track {
 	position: absolute;
-	left: 0.55rem;
-	top: 0.4rem;
-	bottom: 0.4rem;
+	left: calc(1rem - 1px);
+	top: 0;
+	bottom: 0;
 	width: 2px;
 	background: rgba(255, 255, 255, 0.08);
 	border-radius: 2px;
-	overflow: hidden;
 	pointer-events: none;
 }
 
@@ -218,7 +223,7 @@ h1.hero-massive {
 	width: 100%;
 	background: linear-gradient(to bottom, var(--accent), var(--hover-color));
 	border-radius: 2px;
-	transition: height 0.15s ease-out;
+	transition: height 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .nav-numbered-item {

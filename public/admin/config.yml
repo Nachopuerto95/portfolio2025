@@ -21,6 +21,7 @@ collections:
         format: json
         fields:
           - { label: "Nombre", name: name, widget: string }
+          - { label: "Avatar (foto tuya)", name: avatar, widget: image, required: false }
 
           - label: "Estado (status pill)"
             name: status
@@ -86,6 +87,7 @@ collections:
             name: social
             widget: object
             fields:
+              - { label: "Email", name: email, widget: string, required: false }
               - { label: "GitHub URL", name: github, widget: string }
               - { label: "LinkedIn URL", name: linkedin, widget: string }
 

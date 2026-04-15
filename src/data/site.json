@@ -1,5 +1,6 @@
 {
   "name": "Nacho Puerto",
+  "avatar": "/images/nacho-avatar.jpg",
   "status": {
     "label": {
       "es": "Construyendo @ Datista",
@@ -22,6 +23,7 @@
     "highlights": { "es": "Highlights", "en": "Highlights" }
   },
   "social": {
+    "email": "nachopuerto95@gmail.com",
     "github": "https://github.com/Nachopuerto95",
     "linkedin": "https://www.linkedin.com/in/nacho-puerto-mendoza/"
   },

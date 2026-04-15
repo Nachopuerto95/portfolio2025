@@ -105,7 +105,14 @@ function App() {
 				</div>
 				<aside className="w-full lg:w-130 px-6 lg:ml-10 pt-16 pb-10 lg:py-20 lg:h-screen lg:sticky lg:top-0 flex flex-col lg:justify-between">
 					<div className='flex flex-col'>
-						<div className="mb-4">
+						<div className="flex items-center gap-4 mb-5">
+							{site.avatar && (
+								<img
+									src={site.avatar}
+									alt={site.name}
+									className="w-16 h-16 rounded-full object-cover border-2 border-[var(--accent)]/40 shadow-lg"
+								/>
+							)}
 							<span className="status-pill">
 								<span className="dot"></span>
 								{t(site.status?.label, lang) || 'Building @ Datista'}
@@ -146,12 +153,18 @@ function App() {
 							})}
 						</nav>
 					</div>
-					<div className="flex space-x-4 gap-8 justify-start mt-10 lg:mt-15">
-						<a href={site.social.github} className="flex transition duration-300 hover:text-[var(--hover-color)]">
+					<div className="flex flex-wrap gap-x-6 gap-y-3 justify-start mt-10 lg:mt-15">
+						{site.social.email && (
+							<a href={`mailto:${site.social.email}`} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
+								<i className="fa-solid fa-envelope text-[22px] mr-3"></i>
+								<span>{lang === 'en' ? 'Email' : 'Escríbeme'}</span>
+							</a>
+						)}
+						<a href={site.social.github} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
 							<i className="fa-brands fa-github text-[25px] mr-3"></i> GitHub
 						</a>
-						<a href={site.social.linkedin} className="flex transition duration-300 hover:text-[var(--hover-color)]">
-							<i className="fa-brands fa-linkedin text-[25px] mr-3"></i> Linkedin
+						<a href={site.social.linkedin} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
+							<i className="fa-brands fa-linkedin text-[25px] mr-3"></i> LinkedIn
 						</a>
 					</div>
 				</aside>

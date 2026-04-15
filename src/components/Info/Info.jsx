@@ -60,11 +60,11 @@ function Info(props) {
       onClick={() => setIsOpen(false)}
       className="modal-backdrop fixed inset-0 bg-black/50 backdrop-blur-sm z-20 flex items-center justify-center p-4"
     >
-      <div className="modal-content flex flex-col lg:flex-row max-h-[92vh] w-full max-w-5xl justify-center overflow-hidden">
-        <div
-          onClick={(e) => e.stopPropagation()}
-          className="p-5 flex w-full lg:w-[40%] flex-col"
-        >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="modal-content flex flex-col lg:flex-row max-h-[92vh] w-full max-w-5xl rounded-xl bg-[var(--bg-color)]/95 shadow-2xl border border-white/10 overflow-hidden"
+      >
+        <div className="p-5 flex w-full lg:w-[45%] flex-col justify-center bg-[var(--bg-color-2)]/40 lg:border-r border-white/5">
           <div className="relative flex justify-center">
             <img
               className="w-full rounded-lg max-h-[40vh] object-contain"
@@ -118,10 +118,7 @@ function Info(props) {
           </div>
         </div>
 
-        <div
-          onClick={(e) => e.stopPropagation()}
-          className="flex flex-col w-full lg:w-140 max-h-[75vh] lg:max-h-[85vh] justify-between p-5 my-5 rounded-lg bg-[var(--bg-color)]/95 shadow-lg border-t border-white/8"
-        >
+        <div className="flex flex-col w-full lg:w-[55%] max-h-[75vh] lg:max-h-[85vh] justify-between p-5">
           <div className="pb-5 relative">
             <div onClick={() => setIsOpen(false)} className="absolute right-5">
               <i className="cursor-pointer fa-solid fa-xmark hover:text-[var(--hover-color)]"></i>

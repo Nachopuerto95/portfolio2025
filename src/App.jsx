@@ -43,9 +43,10 @@ function NavItem({ item, idx, selected, setSelected, label, navStyle }) {
 
 	if (navStyle === 'numbers') {
 		return (
-			<a className={commonAnchor} href={`#${item.id}`} onClick={onClick}>
-				<span className="nav-num">{num}</span>
-				<span>{label}</span>
+			<a className={`nav-numbered-item group ${isActive ? 'active' : ''}`} href={`#${item.id}`} onClick={onClick}>
+				<span className="nav-numbered-dot"></span>
+				<span className="nav-numbered-num">{num}</span>
+				<span className="nav-numbered-label">{label}</span>
 			</a>
 		);
 	}
@@ -166,7 +167,35 @@ function App() {
 	const [selected, setSelected] = useState('about');
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedProject, setSelectedProject] = useState(null);
+	const [scrollProgress, setScrollProgress] = useState(0);
 	const sectionRefs = useRef({});
+	const mainRef = useRef(null);
+
+	useEffect(() => {
+		const main = mainRef.current;
+		const onScroll = () => {
+			// Large screens: main is the scroll container. Otherwise fall back to window.
+			const usesMain = main && main.scrollHeight > main.clientHeight + 1;
+			let p = 0;
+			if (usesMain) {
+				const total = main.scrollHeight - main.clientHeight;
+				p = total > 0 ? main.scrollTop / total : 0;
+			} else {
+				const total = document.documentElement.scrollHeight - window.innerHeight;
+				p = total > 0 ? window.scrollY / total : 0;
+			}
+			setScrollProgress(Math.max(0, Math.min(1, p)));
+		};
+		if (main) main.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', onScroll);
+		onScroll();
+		return () => {
+			if (main) main.removeEventListener('scroll', onScroll);
+			window.removeEventListener('scroll', onScroll);
+			window.removeEventListener('resize', onScroll);
+		};
+	}, []);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -228,7 +257,15 @@ function App() {
 						<p className={`mt-3 font-normal text-[var(--font-color-2)] ${heroMassive ? 'max-w-lg' : 'max-w-80'}`}>
 							{t(site.tagline, lang)}
 						</p>
-						<nav className={`text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-4 nav-style-${style.nav}`}>
+						<nav className={`text-[12px] font-bold text-[var(--font-color-2)] uppercase hidden lg:flex flex-col mt-15 gap-6 nav-style-${style.nav} ${style.nav === 'numbers' ? 'nav-timeline' : ''}`}>
+							{style.nav === 'numbers' && (
+								<div className="nav-track" aria-hidden="true">
+									<div
+										className="nav-track-fill"
+										style={{ height: `${scrollProgress * 100}%` }}
+									/>
+								</div>
+							)}
 							{NAV_ITEMS.map((item, idx) =>
 								site.nav[item.id] ? (
 									<div key={item.id} className='flex justify-between'>
@@ -254,7 +291,7 @@ function App() {
 						</a>
 					</div>
 				</aside>
-				<main className="w-full lg:w-150 px-6 lg:px-0 pb-16 lg:overflow-y-auto lg:py-25 lg:mr-10">
+				<main ref={mainRef} className="w-full lg:w-150 px-6 lg:px-0 pb-16 lg:overflow-y-auto lg:py-25 lg:mr-10">
 					<section ref={setRef('about')} id='about'>
 						<div className='text-[var(--font-color-2)]'>
 							{renderRichText(t(site.about, lang))}

@@ -22,32 +22,68 @@
         "/images/web1_fit/web1_15.png",
         "/images/web1_fit/web1_16.png"
       ],
-      "title": "Fit-Tracker - Seguimiento deportivo",
-      "description": "Aplicación integral de seguimiento de fitness que permite a los usuarios gestionar rutinas de ejercicio, monitorear su alimentación y visualizar su progreso a través de gráficos intuitivos.",
+      "title": {
+        "es": "Fit-Tracker · Seguimiento deportivo",
+        "en": "Fit-Tracker · Fitness tracking"
+      },
+      "description": {
+        "es": "Aplicación integral de seguimiento de fitness que permite a los usuarios gestionar rutinas de ejercicio, monitorear su alimentación y visualizar su progreso a través de gráficos intuitivos.",
+        "en": "End-to-end fitness tracking app that lets users manage workout routines, track their nutrition, and visualize progress through intuitive charts."
+      },
       "caracteristicas": [
         {
-          "name": "Seguimiento",
-          "lines": [
-            "Registro de usuario con datos personales para cálculo automático de necesidades nutricionales",
-            "Calendario interactivo con historial de actividades y alimentación"
-          ]
+          "name": {
+            "es": "Seguimiento",
+            "en": "Tracking"
+          },
+          "lines": {
+            "es": [
+              "Registro de usuario con datos personales para cálculo automático de necesidades nutricionales",
+              "Calendario interactivo con historial de actividades y alimentación"
+            ],
+            "en": [
+              "User signup with personal data to automatically compute nutritional needs",
+              "Interactive calendar with activity and meal history"
+            ]
+          }
         },
         {
-          "name": "Ejercicio",
-          "lines": [
-            "Biblioteca de rutinas predefinidas seleccionables",
-            "Registro de actividad física diaria",
-            "Seguimiento de progreso mediante gráficas",
-            "Personalización de rutinas según perfil de usuario"
-          ]
+          "name": {
+            "es": "Ejercicio",
+            "en": "Exercise"
+          },
+          "lines": {
+            "es": [
+              "Biblioteca de rutinas predefinidas seleccionables",
+              "Registro de actividad física diaria",
+              "Seguimiento de progreso mediante gráficas",
+              "Personalización de rutinas según perfil de usuario"
+            ],
+            "en": [
+              "Library of selectable pre-built routines",
+              "Daily physical activity logging",
+              "Progress tracking through charts",
+              "Routines tailored to each user's profile"
+            ]
+          }
         },
         {
-          "name": "Nutrición",
-          "lines": [
-            "Registro de comidas y creación de biblioteca personal de alimentos",
-            "Cálculo automático del balance de calorías diarias",
-            "Seguimiento de macronutrientes (proteínas, carbohidratos, grasas)"
-          ]
+          "name": {
+            "es": "Nutrición",
+            "en": "Nutrition"
+          },
+          "lines": {
+            "es": [
+              "Registro de comidas y creación de biblioteca personal de alimentos",
+              "Cálculo automático del balance de calorías diarias",
+              "Seguimiento de macronutrientes (proteínas, carbohidratos, grasas)"
+            ],
+            "en": [
+              "Meal logging with a personal food library",
+              "Automatic daily calorie balance calculation",
+              "Macronutrient tracking (protein, carbs, fat)"
+            ]
+          }
         }
       ],
       "tags": [
@@ -75,28 +111,60 @@
         "/images/web2_reel/web2_09.png",
         "/images/web2_reel/web2_10.png"
       ],
-      "title": "Reelations - Red social de cine",
-      "description": "Reelations es una red social dedicada a los amantes del cine que permite descubrir, catalogar y compartir experiencias cinematográficas. Ofrece herramientas para organizar películas vistas o pendientes, interactuar con otros usuarios etc...  ",
+      "title": {
+        "es": "Reelations · Red social de cine",
+        "en": "Reelations · A social network for film lovers"
+      },
+      "description": {
+        "es": "Reelations es una red social dedicada a los amantes del cine que permite descubrir, catalogar y compartir experiencias cinematográficas. Ofrece herramientas para organizar películas vistas o pendientes e interactuar con otros usuarios.",
+        "en": "Reelations is a social network built for film lovers: a place to discover, catalog and share cinematic experiences, organize watched and watchlisted films, and interact with other users."
+      },
       "caracteristicas": [
         {
-          "name": "Descubrimiento Cinematográfico",
-          "lines": [
-            "Sistema de recomendación inteligente que sugiere películas aleatorias según preferencias y filtros aplicados por el usuario.",
-            "Catálogo completo filtrable por múltiples criterios: género, año de lanzamiento, valoración de críticos y usuarios, duración, etc."
-          ]
+          "name": {
+            "es": "Descubrimiento cinematográfico",
+            "en": "Film discovery"
+          },
+          "lines": {
+            "es": [
+              "Sistema de recomendación que sugiere películas según preferencias y filtros del usuario.",
+              "Catálogo filtrable por múltiples criterios: género, año, valoración, duración, etc."
+            ],
+            "en": [
+              "Recommendation system that suggests films based on user preferences and filters.",
+              "Catalog filterable by multiple criteria: genre, release year, ratings, runtime, and more."
+            ]
+          }
         },
         {
-          "name": "Organización Personal",
-          "lines": [
-            "Creación de listas personalizadas (películas vistas, favoritas, pendientes) con posibilidad de compartirlas con otros usuarios."
-          ]
+          "name": {
+            "es": "Organización personal",
+            "en": "Personal organization"
+          },
+          "lines": {
+            "es": [
+              "Creación de listas personalizadas (vistas, favoritas, pendientes) y posibilidad de compartirlas con otros usuarios."
+            ],
+            "en": [
+              "Custom lists (watched, favorites, watchlist) with the option to share them with other users."
+            ]
+          }
         },
         {
-          "name": "Interacción Social",
-          "lines": [
-            "Fichas detalladas de cada película con información técnica, reparto, sinopsis y material promocional.",
-            "Sección de comentarios y valoraciones para compartir opiniones y generar debate con otros aficionados del cine."
-          ]
+          "name": {
+            "es": "Interacción social",
+            "en": "Social interaction"
+          },
+          "lines": {
+            "es": [
+              "Fichas detalladas de cada película con información técnica, reparto, sinopsis y material promocional.",
+              "Sección de comentarios y valoraciones para compartir opiniones y debatir con otros aficionados."
+            ],
+            "en": [
+              "Detailed film pages with technical info, cast, synopsis and promotional material.",
+              "Comments and ratings section to share opinions and discuss with fellow movie fans."
+            ]
+          }
         }
       ],
       "tags": [
@@ -117,29 +185,55 @@
         "/images/low1_cub/low1_04.gif",
         "/images/low1_cub/low1_05.png"
       ],
-      "title": "Cub3d - Algoritmo ray-casting en C",
-      "description": "Cub3D es un proyecto de gráficos 3D donde se desarrolla un motor gráfico basado en algoritmo de raycasting, inspirado en el clásico Wolfenstein 3D. El objetivo es crear un laberinto tridimensional navegable en primera persona con texturas, iluminación dinámica y control completo del personaje.",
+      "title": {
+        "es": "Cub3d · Ray-casting en C",
+        "en": "Cub3d · A ray-casting engine in C"
+      },
+      "description": {
+        "es": "Motor gráfico 3D basado en ray-casting, inspirado en el clásico Wolfenstein 3D. Laberinto tridimensional navegable en primera persona con texturas, iluminación dinámica y control completo del jugador, todo escrito en C desde cero y siguiendo las normas de 42.",
+        "en": "A 3D graphics engine built on ray-casting, inspired by the classic Wolfenstein 3D. A first-person navigable maze with textures, dynamic lighting and full player control, written in pure C from scratch and compliant with 42's strict norms."
+      },
       "caracteristicas": [
         {
-          "name": "Motor de Raycasting",
-          "lines": [
-            "Implementación completa del algoritmo DDA (Digital Differential Analysis) para calcular distancias a paredes con precisión",
-            "Corrección de la distorsión de perspectiva (fish-eye) mediante transformaciones matemáticas",
-            "Renderizado optimizado para mantener un rendimiento fluido incluso en mapas complejos y gestión eficiente de memoria con estructuras de datos minimalistas conforme a las normas de 42"
-          ]
+          "name": {
+            "es": "Motor de ray-casting",
+            "en": "Ray-casting engine"
+          },
+          "lines": {
+            "es": [
+              "Implementación del algoritmo DDA (Digital Differential Analysis) para calcular distancias a paredes con precisión.",
+              "Corrección de distorsión fish-eye mediante transformaciones matemáticas.",
+              "Renderizado optimizado para mantener rendimiento fluido en mapas complejos, con gestión minimalista de memoria según las normas de 42."
+            ],
+            "en": [
+              "DDA (Digital Differential Analysis) algorithm implementation for accurate wall distance computation.",
+              "Fish-eye distortion correction via math transforms.",
+              "Optimized rendering for smooth performance on complex maps, with minimalist memory management per 42's norms."
+            ]
+          }
         },
         {
-          "name": "Renderizado 3D",
-          "lines": [
-            "Sistema de texturas para paredes con mapeo preciso según punto de impacto del rayo",
-            "Efectos de iluminación dinámica con sombreado según distancia y orientación de las paredes"
-          ]
+          "name": {
+            "es": "Renderizado 3D",
+            "en": "3D rendering"
+          },
+          "lines": {
+            "es": [
+              "Sistema de texturas para paredes con mapeo preciso según el punto de impacto del rayo.",
+              "Iluminación dinámica con sombreado según distancia y orientación de la pared."
+            ],
+            "en": [
+              "Wall texturing system with precise mapping based on the ray's hit point.",
+              "Dynamic lighting with shading based on wall distance and orientation."
+            ]
+          }
         }
       ],
       "tags": [
         "C",
-        "Algoritmia",
-        "Design tools"
+        "Algorithms",
+        "Graphics",
+        "Math"
       ]
     },
     {
@@ -149,49 +243,125 @@
         "/images/low3_mini/low3_01.png",
         "/images/low3_mini/low3_02.png"
       ],
-      "title": "Minishell - Tu propio intérprete",
-      "description": "Desarrollo de una réplica funcional de un intérprete de comandos de UNIX como bash. El proyecto consiste en parsear y ejecutar comandos introducidos por el usuario, gestionar procesos, redirecciones, pipes y señales, así como implementar comandos internos (built-ins).",
+      "title": {
+        "es": "Minishell · Tu propio intérprete",
+        "en": "Minishell · Build your own shell"
+      },
+      "description": {
+        "es": "Réplica funcional de un intérprete de comandos UNIX tipo bash. Parsing y ejecución de comandos del usuario, gestión de procesos, redirecciones, pipes y señales, más comandos internos (built-ins) implementados desde cero en C.",
+        "en": "A working replica of a UNIX command interpreter in the vein of bash. Parses and executes user commands, manages processes, redirections, pipes and signals, plus a set of built-ins — all implemented from scratch in C."
+      },
       "caracteristicas": [
         {
-          "name": "Parsing y Ejecución de Comandos",
-          "lines": [
-            "Análisis de la entrada del usuario para interpretar comandos, argumentos, pipes y redirecciones.",
-            "Gestión de variables de entorno, comillas y caracteres especiales para un comportamiento similar a shells estándar."
-          ]
+          "name": {
+            "es": "Parsing y ejecución de comandos",
+            "en": "Command parsing & execution"
+          },
+          "lines": {
+            "es": [
+              "Análisis del input del usuario para interpretar comandos, argumentos, pipes y redirecciones.",
+              "Gestión de variables de entorno, comillas y caracteres especiales para un comportamiento similar a shells estándar."
+            ],
+            "en": [
+              "User input parsing to interpret commands, arguments, pipes and redirections.",
+              "Environment variables, quoting and special characters handled to match standard shell behavior."
+            ]
+          }
         },
         {
-          "name": "Gestión de Procesos y Flujos",
-          "lines": [
-            "Uso de 'fork', 'execve' y 'wait' para crear y gestionar procesos hijos que ejecutan comandos externos.",
-            "Implementación de tuberías (|) para comunicar la salida de un proceso con la entrada de otro, y redirecciones de entrada/salida (<, >, <<, >>)."
-          ]
+          "name": {
+            "es": "Gestión de procesos y flujos",
+            "en": "Process & I/O management"
+          },
+          "lines": {
+            "es": [
+              "Uso de fork, execve y wait para crear y gestionar procesos hijos que ejecutan comandos externos.",
+              "Pipes (|) para conectar la salida de un proceso con la entrada de otro, y redirecciones (<, >, <<, >>)."
+            ],
+            "en": [
+              "fork, execve and wait used to spawn and manage child processes running external commands.",
+              "Pipes (|) to connect one process's output to another's input, plus input/output redirections (<, >, <<, >>)."
+            ]
+          }
         },
         {
-          "name": "Built-ins y Señales",
-          "lines": [
-            "Manejo de señales como Ctrl-C (SIGINT) y Ctrl-\\ (SIGQUIT) para una interacción robusta con el usuario.",
-            "Creación de comandos internos como 'echo', 'cd', 'pwd', 'export', 'unset', 'env' y 'exit' que se ejecutan directamente en el shell."
-          ]
+          "name": {
+            "es": "Built-ins y señales",
+            "en": "Built-ins & signals"
+          },
+          "lines": {
+            "es": [
+              "Manejo de señales (Ctrl-C, Ctrl-\\) para una interacción robusta con el usuario.",
+              "Built-ins echo, cd, pwd, export, unset, env y exit ejecutados directamente en el shell."
+            ],
+            "en": [
+              "Signal handling (Ctrl-C, Ctrl-\\) for robust user interaction.",
+              "Built-ins echo, cd, pwd, export, unset, env and exit running directly inside the shell."
+            ]
+          }
         }
       ],
       "tags": [
         "C",
         "Unix",
         "Shell",
-        "Procesos",
-        "Señales"
+        "Processes",
+        "Signals"
       ]
     },
     {
       "web": false,
-      "title": "ft_irc - Servidor IRC en C++",
-      "description": "Servidor IRC implementado desde cero en C++98 siguiendo el protocolo RFC. Gestión de múltiples clientes concurrentes mediante I/O multiplexing (poll), canales, comandos de operador y manejo de eventos en tiempo real.",
+      "title": {
+        "es": "ft_irc · Servidor IRC en C++",
+        "en": "ft_irc · IRC server in C++"
+      },
+      "description": {
+        "es": "Servidor IRC implementado desde cero en C++98 siguiendo el protocolo RFC 2812. Atiende múltiples clientes concurrentes usando I/O multiplexing (poll) sobre un único hilo, con canales, operadores, autenticación y manejo completo de eventos en tiempo real.",
+        "en": "An IRC server written from scratch in C++98 following the RFC 2812 protocol. Handles multiple concurrent clients on a single thread using I/O multiplexing (poll), with channels, operators, authentication and full real-time event handling."
+      },
       "link": "",
       "git": "https://github.com/Nachopuerto95",
       "images": [
         "/images/placeholder.svg"
       ],
-      "caracteristicas": [],
+      "caracteristicas": [
+        {
+          "name": {
+            "es": "Arquitectura del servidor",
+            "en": "Server architecture"
+          },
+          "lines": {
+            "es": [
+              "Loop principal basado en poll() para gestionar N clientes concurrentes sin bloquear ni crear un hilo por conexión.",
+              "Sockets TCP no-bloqueantes y buffers por cliente para manejar mensajes parciales.",
+              "Parser de comandos conforme al RFC 2812."
+            ],
+            "en": [
+              "Main poll()-based event loop handling N concurrent clients on a single thread, with no blocking and no per-connection thread.",
+              "Non-blocking TCP sockets with per-client buffers to handle partial messages.",
+              "Command parser compliant with RFC 2812."
+            ]
+          }
+        },
+        {
+          "name": {
+            "es": "Funcionalidades IRC",
+            "en": "IRC features"
+          },
+          "lines": {
+            "es": [
+              "Autenticación con PASS, NICK y USER antes de unirse a canales.",
+              "Canales con modos (+i, +t, +k, +o, +l), invitaciones, mensajes privados y broadcasts.",
+              "Comandos de operador (KICK, INVITE, TOPIC, MODE) con comprobaciones de permisos."
+            ],
+            "en": [
+              "Authentication with PASS, NICK and USER before joining channels.",
+              "Channels with modes (+i, +t, +k, +o, +l), invitations, private messages and broadcasts.",
+              "Operator commands (KICK, INVITE, TOPIC, MODE) with permission checks."
+            ]
+          }
+        }
+      ],
       "tags": [
         "C++",
         "Networking",

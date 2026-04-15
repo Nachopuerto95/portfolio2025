@@ -211,15 +211,25 @@ collections:
           - label: "Proyectos"
             name: projects
             widget: list
-            summary: "{{fields.title}}"
+            summary: "{{fields.title.es}}"
             fields:
-              - { label: "Título", name: title, widget: string }
+              - label: "Título"
+                name: title
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: string }
+                  - { label: "EN", name: en, widget: string }
               - label: "¿Es proyecto Web full-stack?"
                 name: web
                 widget: boolean
                 default: true
                 hint: "Activado = sección Web. Desactivado = sección Low-level."
-              - { label: "Descripción", name: description, widget: text }
+              - label: "Descripción"
+                name: description
+                widget: object
+                fields:
+                  - { label: "ES", name: es, widget: text }
+                  - { label: "EN", name: en, widget: text }
               - { label: "Enlace al sitio", name: link, widget: string, required: false }
               - { label: "Repositorio GitHub", name: git, widget: string, required: false }
               - label: "Imágenes"
@@ -234,10 +244,23 @@ collections:
                 name: caracteristicas
                 widget: list
                 required: false
-                summary: "{{fields.name}}"
+                summary: "{{fields.name.es}}"
                 fields:
-                  - { label: "Nombre", name: name, widget: string }
+                  - label: "Nombre"
+                    name: name
+                    widget: object
+                    fields:
+                      - { label: "ES", name: es, widget: string }
+                      - { label: "EN", name: en, widget: string }
                   - label: "Líneas"
                     name: lines
-                    widget: list
-                    field: { label: "Línea", name: line, widget: string }
+                    widget: object
+                    fields:
+                      - label: "ES"
+                        name: es
+                        widget: list
+                        field: { label: "Línea", name: line, widget: string }
+                      - label: "EN"
+                        name: en
+                        widget: list
+                        field: { label: "Line", name: line, widget: string }

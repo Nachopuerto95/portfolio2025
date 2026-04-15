@@ -4,6 +4,7 @@
       "web": true,
       "link": "",
       "git": "https://github.com/Nachopuerto95/gymtrackerv2",
+      "cover": "/images/web_5/gym_cover.jpg",
       "images": [
         "/images/web_5/gym_01.jpg",
         "/images/web_5/gym_02.jpg",

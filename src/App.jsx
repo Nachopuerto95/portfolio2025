@@ -256,7 +256,7 @@ function App() {
 							<ProjectCard
 								key={idx}
 								{...project}
-								image={project.images[0]}
+								image={project.cover || project.images[0]}
 								onClick={() => handleProjectClick(project)}
 							/>
 						))}
@@ -281,7 +281,7 @@ function App() {
 							<ProjectCard
 								key={idx}
 								{...project}
-								image={project.images[0]}
+								image={project.cover || project.images[0]}
 								onClick={() => handleProjectClick(project)}
 							/>
 						))}

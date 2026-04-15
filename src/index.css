@@ -182,3 +182,90 @@ nav div:hover .menu-bar {
 @media (max-width: 1024px) {
 	h1 { font-size: 2.25rem; }
 }
+
+/* Palette picker (temporal) */
+.palette-picker {
+	position: fixed;
+	bottom: 1.25rem;
+	left: 1.25rem;
+	z-index: 30;
+	font-family: var(--font-display);
+}
+
+.palette-picker-toggle {
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	color: var(--font-color);
+	border-radius: 999px;
+	padding: 0.5rem 1rem;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	transition: border-color 0.2s ease;
+}
+
+.palette-picker-toggle:hover {
+	border-color: var(--accent);
+}
+
+.palette-picker-list {
+	margin-top: 0.5rem;
+	background: rgba(0, 0, 0, 0.75);
+	backdrop-filter: blur(14px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 0.75rem;
+	padding: 0.5rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.25rem;
+	max-height: 70vh;
+	overflow-y: auto;
+	min-width: 210px;
+}
+
+.palette-chip {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.5rem 0.6rem;
+	border-radius: 0.5rem;
+	background: transparent;
+	border: 1px solid transparent;
+	cursor: pointer;
+	color: rgb(237, 237, 238);
+	font-size: 12px;
+	text-align: left;
+	transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.palette-chip:hover {
+	background: rgba(255, 255, 255, 0.06);
+}
+
+.palette-chip.active {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+.palette-chip-swatches {
+	display: inline-flex;
+	flex-shrink: 0;
+}
+
+.palette-chip-swatches span {
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.palette-chip-swatches span:last-child {
+	margin-left: -4px;
+}
+
+.palette-chip-name {
+	white-space: nowrap;
+}

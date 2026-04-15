@@ -45,6 +45,21 @@ function Info(props) {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      } else if (e.key === "ArrowRight") {
+        handleNextImage();
+      } else if (e.key === "ArrowLeft") {
+        handlePrevImage();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isOpen, selectedImage, currentIndex, project]);
+
   if (!isOpen) return null;
 
   const title = t(project.title, lang);

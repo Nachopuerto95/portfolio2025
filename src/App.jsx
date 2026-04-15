@@ -103,9 +103,9 @@ function App() {
 				<div className="hidden lg:block">
 					<Canvas />
 				</div>
-				<aside className="w-full lg:w-130 px-6 lg:ml-10 pt-16 pb-10 lg:py-20 lg:h-screen lg:sticky lg:top-0 flex flex-col lg:justify-between">
-					<div className='flex flex-col'>
-						<div className="flex items-center gap-4 mb-5">
+				<aside className="w-full lg:w-130 px-6 lg:ml-10 pt-16 pb-10 lg:py-20 lg:h-screen lg:sticky lg:top-0 flex flex-col items-center text-center lg:items-start lg:text-left lg:justify-between">
+					<div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
+						<div className="flex flex-col lg:flex-row items-center gap-4 mb-5">
 							{site.avatar && (
 								<img
 									src={site.avatar}
@@ -163,7 +163,7 @@ function App() {
 							})}
 						</nav>
 					</div>
-					<div className="flex flex-wrap gap-x-6 gap-y-3 justify-start mt-10 lg:mt-15">
+					<div className="flex flex-wrap gap-x-6 gap-y-3 justify-center lg:justify-start mt-10 lg:mt-15">
 						<a href={site.social.github} className="flex items-center transition duration-300 hover:text-[var(--hover-color)]">
 							<i className="fa-brands fa-github text-[25px] mr-3"></i> GitHub
 						</a>

@@ -26,8 +26,8 @@
     "linkedin": "https://www.linkedin.com/in/nacho-puerto-mendoza/"
   },
   "about": {
-    "es": "Desarrollador Fullstack construyendo productos reales de principio a fin — del front-end a la infraestructura.\n\nMi trayectoria empezó en el **diseño gráfico** y giró hacia el desarrollo cuando descubrí que lo que realmente me movía era resolver problemas con código. Combino esa base creativa con el rigor técnico de construir sistemas en producción.\n\nActualmente soy **Founding Engineer en Datista Tech**, donde llevo el producto de cero a producción, y en paralelo estudio en **42 Madrid (Fundación Telefónica)**, donde fui primero de mi promoción.",
-    "en": "Full-stack developer shipping real products end-to-end — from front-end to infrastructure.\n\nI started in **graphic design** and moved fully into development when I realized that solving problems with code was what really drove me. I combine that creative foundation with the technical rigor of building production systems.\n\nI'm currently **Founding Engineer at Datista Tech**, taking the product from zero to production, while studying at **42 Madrid (Fundación Telefónica)**, where I ranked first in my cohort."
+    "es": "Desarrollador Fullstack al que le interesan, con el mismo cuidado, tanto la interfaz que ve el usuario como la infraestructura que nadie ve.\n\nEmpecé en el **diseño gráfico**. Con el tiempo descubrí que lo que realmente me movía era resolver problemas con código, así que giré por completo hacia el desarrollo — y esa base creativa sigue siendo parte de cómo pienso el producto: cómo se siente al usarlo, qué detalles importan, qué no debería estar ahí.\n\nActualmente soy **Founding Engineer en Datista Tech**, donde construyo una plataforma SaaS con agentes de voz en tiempo real, mientras estudio en **42 Madrid (Fundación Telefónica)** profundizando en C, C++ y algoritmia.\n\nMe interesan especialmente los sistemas que combinan un front-end pulido, un back-end bien razonado e infraestructura que aguante en producción — y encontrar el sitio exacto donde la IA se integra en ese stack sin ensuciar el producto. Me motiva trabajar en equipos pequeños donde las decisiones se ven reflejadas rápido y donde el impacto de cada línea de código es visible.",
+    "en": "Full-stack developer who cares, with equal attention, about the interface the user sees and the infrastructure nobody sees.\n\nI started in **graphic design**. Over time I realized that what really drove me was solving problems with code, so I pivoted fully into development — and that creative foundation still shapes how I think about products: how they feel to use, which details matter, and which shouldn't be there at all.\n\nI'm currently **Founding Engineer at Datista Tech**, building a SaaS platform with real-time voice agents, while studying at **42 Madrid (Fundación Telefónica)** — going deeper into C, C++ and algorithms.\n\nI'm particularly drawn to systems that combine a polished front-end, a thoughtful back-end, and infrastructure that holds up in production — and to finding the right place for AI to fit into that stack without cluttering the product. I enjoy working in small teams where decisions show up quickly in the product and the impact of every line of code is visible."
   },
   "experience": [
     {
@@ -41,8 +41,8 @@
         "en": "Sep 2025 — Present"
       },
       "description": {
-        "es": "De cero a producto en producción como primer desarrollador. Plataforma SaaS con agentes de voz en tiempo real, widgets embebibles y paneles de control para clientes y operaciones internas.",
-        "en": "From zero to production as the first developer. SaaS platform with real-time voice agents, embeddable widgets, and dashboards for clients and internal operations."
+        "es": "Primer desarrollador de una plataforma SaaS con agentes de voz en tiempo real, widgets embebibles y paneles de control para clientes y operaciones internas. Responsable del producto end-to-end: front-end, back-end, datos, voz e infraestructura.",
+        "en": "First developer on a SaaS platform with real-time voice agents, embeddable widgets, and dashboards for clients and internal operations. End-to-end product ownership across front-end, back-end, data, voice, and infrastructure."
       },
       "highlights": {
         "es": [
@@ -63,25 +63,14 @@
   ],
   "highlights": [
     {
-      "icon": "fa-solid fa-trophy",
-      "title": {
-        "es": "Primero de mi promoción",
-        "en": "Ranked first in my cohort"
-      },
-      "where": {
-        "es": "42 Madrid (Fundación Telefónica)",
-        "en": "42 Madrid (Fundación Telefónica)"
-      }
-    },
-    {
       "icon": "fa-solid fa-star",
       "title": {
         "es": "Fittracker seleccionado para la International HackShow",
         "en": "Fittracker selected for the International HackShow"
       },
       "where": {
-        "es": "Proyecto elegido para representar al bootcamp",
-        "en": "Project chosen to represent the bootcamp"
+        "es": "Proyecto elegido para representar al bootcamp de Ironhack",
+        "en": "Project chosen to represent the Ironhack bootcamp"
       }
     }
   ],

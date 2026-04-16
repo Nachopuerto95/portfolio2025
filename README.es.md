@@ -68,4 +68,4 @@ portfolio2025/
 
 ## 🚀 Deploy
 
-Aún sin desplegar — pensado para meter en cualquier host estático (Netlify, Vercel, GitHub Pages, Fly.io).
+En vivo en Netlify: [nachopuertoportfolio.netlify.app](https://nachopuertoportfolio.netlify.app/) — auto-deploy desde `main` con el `netlify.toml` incluido.

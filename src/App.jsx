@@ -113,11 +113,14 @@ function App() {
 					<div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
 						<div className="flex flex-col lg:flex-row items-center gap-4 mb-5">
 							{site.avatar && (
-								<img
-									src={site.avatar}
-									alt={site.name}
-									className="w-28 h-28 rounded-full object-cover border-2 border-[var(--accent)]/40 shadow-lg"
-								/>
+								<div className="w-28 h-28 rounded-full overflow-hidden border-2 border-[var(--accent)]/40 shadow-lg">
+									<img
+										src={site.avatar}
+										alt={site.name}
+										className="w-full h-full object-cover"
+										style={{ transform: 'scale(1.8) translate(-4%, -10%)' }}
+									/>
+								</div>
 							)}
 							<span className="status-pill">
 								<span className="dot"></span>

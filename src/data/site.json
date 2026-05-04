@@ -8,12 +8,12 @@
     }
   },
   "role": {
-    "es": "Founding Fullstack Engineer",
-    "en": "Founding Fullstack Engineer"
+    "es": "Software Engineer",
+    "en": "Software Engineer"
   },
   "tagline": {
-    "es": "Producto entero, del navegador al servidor.",
-    "en": "The whole product, from the browser to the server."
+    "es": "Del navegador al kernel.",
+    "en": "From the browser to the kernel."
   },
   "nav": {
     "about": { "es": "About me", "en": "About me" },

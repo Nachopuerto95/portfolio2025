@@ -4,11 +4,11 @@
       "web": true,
       "link": "https://ambitious-mushroom-0bfafab10.1.azurestaticapps.net/webtools",
       "git": "",
-      "cover": "/images/contestaria/dashboard-calls.png",
+      "cover": "/images/contestaria/infra-diagram.svg",
       "images": [
+        "/images/contestaria/infra-diagram.svg",
         "/images/contestaria/dashboard-calls.png",
-        "/images/contestaria/dashboard-usage.png",
-        "/images/contestaria/infra-diagram.svg"
+        "/images/contestaria/dashboard-usage.png"
       ],
       "title": {
         "es": "ContestarIA · Agente de voz IA en tiempo real",

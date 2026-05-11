@@ -8,6 +8,7 @@ function Info(props) {
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [zoomed, setZoomed] = useState(false);
   const visibleCount = 4;
 
   const handleImageClick = (idx) => {
@@ -42,6 +43,7 @@ function Info(props) {
     if (isOpen) {
       setSelectedImage(0);
       setCurrentIndex(0);
+      setZoomed(false);
     }
   }, [isOpen]);
 
@@ -49,6 +51,7 @@ function Info(props) {
     if (!isOpen) return;
     const onKey = (e) => {
       if (e.key === "Escape") {
+        if (zoomed) { setZoomed(false); return; }
         setIsOpen(false);
       } else if (e.key === "ArrowRight") {
         handleNextImage();
@@ -79,13 +82,43 @@ function Info(props) {
       >
         {/* Gallery card */}
         <div className="flex flex-col lg:flex-[3] min-h-0 rounded-xl bg-[var(--bg-color)]/95 border border-white/10 shadow-xl overflow-hidden">
-          <div className="flex-1 min-h-0 flex items-center justify-center p-4 lg:p-6 bg-[var(--bg-color-2)]/40">
+          <div className="relative flex-1 min-h-0 flex items-center justify-center p-4 lg:p-6 bg-[var(--bg-color-2)]/40">
             <img
-              className="max-h-full max-w-full object-contain rounded-md"
+              className="max-h-full max-w-full object-contain rounded-md cursor-zoom-in"
               src={project.images[selectedImage]}
               alt={`${title} - image ${selectedImage + 1}`}
+              onClick={() => setZoomed(true)}
             />
+            <button
+              onClick={() => setZoomed(true)}
+              className="absolute top-2 right-2 bg-black/50 hover:bg-black/80 text-white rounded-md px-2 py-1 text-xs flex items-center gap-1 transition"
+              title="Ver a tamaño completo"
+            >
+              <i className="fa-solid fa-expand text-[11px]"></i>
+              <span>Expand</span>
+            </button>
           </div>
+
+          {/* Zoom overlay */}
+          {zoomed && (
+            <div
+              className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+              onClick={() => setZoomed(false)}
+            >
+              <img
+                src={project.images[selectedImage]}
+                alt={`${title} - fullscreen`}
+                className="max-h-[95vh] max-w-[95vw] object-contain rounded-lg"
+                onClick={e => e.stopPropagation()}
+              />
+              <button
+                onClick={() => setZoomed(false)}
+                className="absolute top-4 right-4 bg-black/60 hover:bg-black/90 text-white rounded-full w-9 h-9 flex items-center justify-center text-lg transition"
+              >
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          )}
 
           <div className="flex justify-center items-center p-3 relative border-t border-white/5 bg-[var(--bg-color)]/80">
             <button

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-accent" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6366f1"/>
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="580" fill="#0f172a" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#f1f5f9" font-size="15" font-weight="700" letter-spacing="1">ContestarIA — Arquitectura de infraestructura</text>
+  <text x="450" y="54" text-anchor="middle" fill="#64748b" font-size="11">Datista Tech · Founding Engineer</text>
+
+  <!-- ─── ZONA: CLIENTS ─── -->
+  <rect x="30" y="76" width="170" height="100" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="115" y="96" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="0.8">CLIENTES</text>
+  <!-- Browser -->
+  <rect x="46" y="106" width="64" height="36" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="78" y="120" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Widget</text>
+  <text x="78" y="132" text-anchor="middle" fill="#6366f1" font-size="8">React / TS</text>
+  <!-- Phone -->
+  <rect x="120" y="106" width="64" height="36" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="152" y="120" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Teléfono</text>
+  <text x="152" y="132" text-anchor="middle" fill="#6366f1" font-size="8">FreeSWITCH</text>
+
+  <!-- ─── ZONA: FRONTEND ─── -->
+  <rect x="30" y="200" width="170" height="80" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="115" y="220" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="0.8">FRONTEND</text>
+  <rect x="46" y="228" width="138" height="36" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="115" y="241" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Dashboard / Panel Admin</text>
+  <text x="115" y="254" text-anchor="middle" fill="#6366f1" font-size="8">React · TypeScript · Vite</text>
+
+  <!-- ─── ZONA: BACKEND ─── -->
+  <rect x="240" y="140" width="200" height="260" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="340" y="160" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="0.8">BACKEND</text>
+
+  <rect x="256" y="168" width="168" height="40" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="340" y="183" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">API Principal</text>
+  <text x="340" y="197" text-anchor="middle" fill="#6366f1" font-size="8">FastAPI · Python</text>
+
+  <rect x="256" y="220" width="78" height="40" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="295" y="236" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Workers</text>
+  <text x="295" y="248" text-anchor="middle" fill="#6366f1" font-size="8">Celery</text>
+
+  <rect x="346" y="220" width="78" height="40" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="385" y="236" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Queue / Cache</text>
+  <text x="385" y="248" text-anchor="middle" fill="#6366f1" font-size="8">Redis</text>
+
+  <rect x="256" y="272" width="168" height="40" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="340" y="287" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Base de datos</text>
+  <text x="340" y="301" text-anchor="middle" fill="#6366f1" font-size="8">PostgreSQL</text>
+
+  <rect x="256" y="324" width="168" height="40" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="340" y="339" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Autenticación</text>
+  <text x="340" y="353" text-anchor="middle" fill="#6366f1" font-size="8">JWT · multi-tenant workspaces</text>
+
+  <!-- ─── ZONA: VOICE PIPELINE ─── -->
+  <rect x="480" y="140" width="200" height="200" rx="8" fill="#1e2a3a" stroke="#3b4f6e" stroke-width="1.5"/>
+  <text x="580" y="160" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600" letter-spacing="0.8">VOZ EN TIEMPO REAL</text>
+
+  <rect x="496" y="168" width="168" height="36" rx="5" fill="#0f172a" stroke="#3b4f6e" stroke-width="1"/>
+  <text x="580" y="182" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">FreeSWITCH</text>
+  <text x="580" y="196" text-anchor="middle" fill="#7dd3fc" font-size="8">Telefonía SIP · PSTN</text>
+
+  <rect x="496" y="216" width="78" height="36" rx="5" fill="#0f172a" stroke="#3b4f6e" stroke-width="1"/>
+  <text x="535" y="230" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">LiveKit</text>
+  <text x="535" y="244" text-anchor="middle" fill="#7dd3fc" font-size="8">WebRTC</text>
+
+  <rect x="586" y="216" width="78" height="36" rx="5" fill="#0f172a" stroke="#3b4f6e" stroke-width="1"/>
+  <text x="625" y="230" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">STT → LLM</text>
+  <text x="625" y="244" text-anchor="middle" fill="#7dd3fc" font-size="8">→ TTS</text>
+
+  <rect x="496" y="264" width="168" height="36" rx="5" fill="#0f172a" stroke="#3b4f6e" stroke-width="1"/>
+  <text x="580" y="278" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Agente Conversacional</text>
+  <text x="580" y="292" text-anchor="middle" fill="#7dd3fc" font-size="8">Claude · OpenAI · prompts por cliente</text>
+
+  <!-- ─── ZONA: OBSERVABILITY ─── -->
+  <rect x="480" y="360" width="200" height="80" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="580" y="380" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="0.8">OBSERVABILIDAD</text>
+  <rect x="496" y="388" width="168" height="36" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="580" y="402" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Prometheus · Grafana · Loki</text>
+  <text x="580" y="416" text-anchor="middle" fill="#6366f1" font-size="8">Alertmanager · métricas · logs</text>
+
+  <!-- ─── ZONA: INFRA ─── -->
+  <rect x="700" y="140" width="168" height="160" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="784" y="160" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="0.8">INFRAESTRUCTURA</text>
+
+  <rect x="716" y="168" width="136" height="36" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="784" y="182" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">Docker</text>
+  <text x="784" y="196" text-anchor="middle" fill="#6366f1" font-size="8">Multi-servidor · containers</text>
+
+  <rect x="716" y="216" width="136" height="36" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="784" y="230" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">WireGuard VPN</text>
+  <text x="784" y="244" text-anchor="middle" fill="#6366f1" font-size="8">Red privada entre servidores</text>
+
+  <rect x="716" y="264" width="136" height="36" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+  <text x="784" y="278" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">n8n · Claude · OpenAI</text>
+  <text x="784" y="292" text-anchor="middle" fill="#6366f1" font-size="8">Automatización interna con IA</text>
+
+  <!-- ─── FLECHAS ─── -->
+  <!-- Clients → Backend -->
+  <line x1="200" y1="124" x2="240" y2="188" stroke="#475569" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <!-- Frontend → Backend -->
+  <line x1="200" y1="240" x2="240" y2="240" stroke="#475569" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <!-- Backend → Voice -->
+  <line x1="440" y1="210" x2="480" y2="210" stroke="#3b4f6e" stroke-width="1.5" marker-end="url(#arrow-accent)"/>
+  <!-- Backend → Observability -->
+  <line x1="340" y1="400" x2="480" y2="400" stroke="#475569" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <!-- Voice → Infra -->
+  <line x1="680" y1="210" x2="700" y2="210" stroke="#475569" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <!-- Clients Phone → Voice -->
+  <line x1="184" y1="124" x2="496" y2="190" stroke="#3b4f6e" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-accent)"/>
+
+  <!-- ─── LEYENDA ─── -->
+  <rect x="30" y="490" width="840" height="70" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="55" y="512" fill="#94a3b8" font-size="10" font-weight="600">Stack completo:</text>
+  <text x="55" y="530" fill="#64748b" font-size="10">Frontend: React, TypeScript, Vite</text>
+  <text x="55" y="548" fill="#64748b" font-size="10">Backend: FastAPI, Python, PostgreSQL, Redis, Celery</text>
+  <text x="340" y="530" fill="#64748b" font-size="10">Voz: FreeSWITCH (SIP/PSTN), LiveKit (WebRTC), STT → LLM → TTS</text>
+  <text x="340" y="548" fill="#64748b" font-size="10">Infra: Docker, WireGuard VPN, Prometheus, Grafana, Loki, Alertmanager</text>
+  <text x="700" y="530" fill="#64748b" font-size="10">Automatización: n8n, Claude API, OpenAI</text>
+  <text x="700" y="548" fill="#64748b" font-size="10">Auth: JWT, multi-tenant (workspaces)</text>
+</svg>

@@ -1,9 +1,11 @@
 import { useLang, t } from '../../../i18n';
 
-export default function ProjectCard({ title, description, tags, image, onClick }) {
+export default function ProjectCard({ title, description, tags, image, onClick, project }) {
 	const { lang } = useLang();
 	const resolvedTitle = t(title, lang);
 	const resolvedDescription = t(description, lang);
+	const caracteristicas = project ? t(project.caracteristicas, lang) : null;
+
 	return (
 		<div
 			onClick={onClick}
@@ -40,6 +42,23 @@ export default function ProjectCard({ title, description, tags, image, onClick }
 							</div>
 						))}
 				</div>
+			</div>
+
+			{/* Hidden content for AI crawlers — not visible to users */}
+			<div className="sr-only">
+				<p>{resolvedDescription}</p>
+				{project?.git && <a href={project.git}>Source code repository</a>}
+				{project?.link && <a href={project.link}>Live demo</a>}
+				{Array.isArray(caracteristicas) && caracteristicas.map((car, idx) => (
+					<div key={idx}>
+						<h3>{t(car.name, lang)}</h3>
+						<ul>
+							{(t(car.lines, lang) || []).map((line, lineIdx) => (
+								<li key={lineIdx}>{line}</li>
+							))}
+						</ul>
+					</div>
+				))}
 			</div>
 		</div>
 	);

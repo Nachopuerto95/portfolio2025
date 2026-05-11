@@ -268,6 +268,7 @@ function App() {
 								{...project}
 								image={project.cover || project.images[0]}
 								onClick={() => handleProjectClick(project)}
+								project={project}
 							/>
 						))}
 						<a
@@ -294,6 +295,7 @@ function App() {
 								{...project}
 								image={project.cover || project.images[0]}
 								onClick={() => handleProjectClick(project)}
+								project={project}
 							/>
 						))}
 						<a

@@ -2,6 +2,120 @@
   "projects": [
     {
       "web": true,
+      "link": "https://ambitious-mushroom-0bfafab10.1.azurestaticapps.net/webtools",
+      "git": "",
+      "cover": "/images/placeholder.svg",
+      "images": [
+        "/images/placeholder.svg",
+        "/images/contestaria/infra-diagram.svg"
+      ],
+      "title": {
+        "es": "ContestarIA · Agente de voz IA en tiempo real",
+        "en": "ContestarIA · Real-time voice AI agent"
+      },
+      "description": {
+        "es": "Plataforma SaaS de agentes de voz IA en tiempo real, construida end-to-end como Founding Engineer en Datista. Incluye contestaria.com (producto público), un widget React embebible en cualquier web, un panel interno de gestión de workspaces y conversaciones, y toda la infraestructura multi-servidor. Pipeline completo STT → LLM → TTS con FreeSWITCH y LiveKit. En producción con clientes reales.",
+        "en": "Real-time voice AI SaaS platform built end-to-end as Founding Engineer at Datista. Includes contestaria.com (public product), an embeddable React widget for any website, an internal workspace and conversation management dashboard, and the full multi-server infrastructure. Complete STT → LLM → TTS pipeline with FreeSWITCH and LiveKit. Live in production with real customers."
+      },
+      "caracteristicas": [
+        {
+          "name": {
+            "es": "Pipeline de voz en tiempo real",
+            "en": "Real-time voice pipeline"
+          },
+          "lines": {
+            "es": [
+              "Pipeline STT → LLM → TTS de baja latencia integrado con FreeSWITCH para telefonía y LiveKit para WebRTC.",
+              "Agentes conversacionales configurables por cliente: prompts, voz, idioma y lógica de negocio.",
+              "Gestión de sesiones de voz concurrentes con estado por conversación en Redis."
+            ],
+            "en": [
+              "Low-latency STT → LLM → TTS pipeline integrated with FreeSWITCH for telephony and LiveKit for WebRTC.",
+              "Configurable conversational agents per client: prompts, voice, language and business logic.",
+              "Concurrent voice session management with per-conversation state in Redis."
+            ]
+          }
+        },
+        {
+          "name": {
+            "es": "Widget embebible y panel de control",
+            "en": "Embeddable widget and dashboard"
+          },
+          "lines": {
+            "es": [
+              "Widget React/TypeScript embebible en cualquier web mediante un snippet — activo en sitios de clientes reales.",
+              "Panel de administración para gestionar workspaces, revisar conversaciones, configurar agentes y analizar métricas.",
+              "Demo pública en: ambitious-mushroom-0bfafab10.1.azurestaticapps.net/webtools"
+            ],
+            "en": [
+              "React/TypeScript widget embeddable on any website via a snippet — live on real client sites.",
+              "Admin dashboard to manage workspaces, review conversations, configure agents and analyse metrics.",
+              "Public demo at: ambitious-mushroom-0bfafab10.1.azurestaticapps.net/webtools"
+            ]
+          }
+        },
+        {
+          "name": {
+            "es": "Backend y arquitectura",
+            "en": "Backend and architecture"
+          },
+          "lines": {
+            "es": [
+              "Backend FastAPI + PostgreSQL con workers asíncronos en Celery y Redis para tareas en background.",
+              "Frontend React/TypeScript (widget + dashboard) con autenticación y multi-tenant por workspace.",
+              "Infraestructura multi-servidor con Docker, red privada WireGuard y observabilidad completa con Prometheus, Grafana, Loki y Alertmanager."
+            ],
+            "en": [
+              "FastAPI backend + PostgreSQL with async Celery and Redis workers for background tasks.",
+              "React/TypeScript frontend (widget + dashboard) with authentication and per-workspace multi-tenancy.",
+              "Multi-server infrastructure with Docker, private WireGuard network, and full observability via Prometheus, Grafana, Loki and Alertmanager."
+            ]
+          }
+        }
+      ],
+      "tags": [
+        "React",
+        "TypeScript",
+        "FastAPI",
+        "Python",
+        "LiveKit",
+        "FreeSWITCH",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Voice AI",
+        "WebRTC"
+      ]
+    },
+    {
+      "web": true,
+      "link": "https://www.contestaria.com/",
+      "git": "",
+      "cover": "/images/placeholder.svg",
+      "images": [
+        "/images/placeholder.svg"
+      ],
+      "title": {
+        "es": "contestaria.com · Web de producto",
+        "en": "contestaria.com · Product website"
+      },
+      "description": {
+        "es": "Web pública de ContestarIA: presenta el producto, sus casos de uso y propuesta de valor a clientes potenciales. Diseñada y desarrollada en React como parte del trabajo end-to-end en Datista.",
+        "en": "Public product website for ContestarIA: showcases the product, use cases and value proposition to potential clients. Designed and developed in React as part of end-to-end ownership at Datista."
+      },
+      "caracteristicas": [
+        {
+          "name": { "es": "Frontend", "en": "Frontend" },
+          "lines": {
+            "es": ["Desarrollada en React, diseño y maquetación propios."],
+            "en": ["Built in React, custom design and layout."]
+          }
+        }
+      ],
+      "tags": ["React", "Datista"]
+    },
+    {
+      "web": true,
       "link": "",
       "git": "https://github.com/Nachopuerto95/gymtrackerv2",
       "cover": "/images/web_5/gym_cover.jpg",

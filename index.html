@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Nacho Puerto — Full-stack &amp; AI Engineer</title>
-    <meta name="description" content="Full-stack &amp; AI engineer. Founding Engineer at Datista, building real-time voice AI products end-to-end — FastAPI, React, Postgres, and the infrastructure behind them." />
+    <meta name="description" content="Fullstack Engineer. Founding Engineer at Datista building real-time voice AI end-to-end: React, TypeScript, Node.js, FastAPI, PostgreSQL, Docker. C/C++ systems via 42 Madrid (#1 cohort)." />
     <meta name="author" content="Nacho Puerto Mendoza" />
     <meta name="theme-color" content="#0f172a" />
 
@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://nachopuertoportfolio.netlify.app/" />
     <meta property="og:site_name" content="Nacho Puerto" />
     <meta property="og:title" content="Nacho Puerto — Full-stack &amp; AI Engineer" />
-    <meta property="og:description" content="Founding Engineer at Datista. Building real products end-to-end: FastAPI, React, voice AI, infrastructure." />
+    <meta property="og:description" content="Founding Engineer at Datista. React · TypeScript · Node.js · C/C++ · Docker · Voice AI. 42 Madrid #1." />
     <meta property="og:image" content="/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -33,8 +33,97 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://nachopuertoportfolio.netlify.app/" />
     <meta name="twitter:title" content="Nacho Puerto — Full-stack &amp; AI Engineer" />
-    <meta name="twitter:description" content="Founding Engineer at Datista. Full-stack &amp; AI — from the browser to the server." />
+    <meta name="twitter:description" content="Founding Engineer at Datista. Full-stack &amp; AI — from the browser to the kernel." />
     <meta name="twitter:image" content="/og.png" />
+    <!-- Structured data for AI/ATS crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://nachopuertoportfolio.netlify.app/#person",
+          "name": "Nacho Puerto Mendoza",
+          "alternateName": "Ignacio Puerto",
+          "url": "https://nachopuertoportfolio.netlify.app/",
+          "email": "nachopuerto95@gmail.com",
+          "jobTitle": "Fullstack Engineer",
+          "description": "Founding Engineer at Datista Tech building real-time voice AI. 42 Madrid top graduate. Full-stack React/TypeScript/Node.js engineer with C/C++ systems expertise.",
+          "knowsAbout": [
+            "React", "TypeScript", "Node.js", "Express", "JavaScript",
+            "C", "C++", "Docker", "PostgreSQL", "Redis", "Linux",
+            "LiveKit", "FreeSWITCH", "WebRTC", "Voice AI",
+            "FastAPI", "Python", "Celery", "WireGuard",
+            "Prometheus", "Grafana", "Loki", "Tailwind CSS", "Vite"
+          ],
+          "sameAs": [
+            "https://github.com/Nachopuerto95",
+            "https://www.linkedin.com/in/nacho-puerto-mendoza/"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Datista Tech",
+            "description": "SaaS platform with real-time voice AI agents and embeddable widgets"
+          },
+          "alumniOf": [
+            {
+              "@type": "EducationalOrganization",
+              "name": "42 Madrid",
+              "description": "Ranked #1 in cohort — common core completed in C, C++, Unix, networking and algorithms"
+            },
+            {
+              "@type": "EducationalOrganization",
+              "name": "Ironhack",
+              "description": "Full-stack web development bootcamp"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "GymTracker v2",
+          "description": "Mobile-first gym tracking app. Drag & drop routine builder, interactive calendar, progress charts. React 19 + Vite + Tailwind + Zustand frontend. Express + MongoDB backend with JWT auth. Deployed on Fly.io with Docker.",
+          "codeRepository": "https://github.com/Nachopuerto95/gymtrackerv2",
+          "applicationCategory": "HealthApplication",
+          "programmingLanguage": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Docker", "Tailwind"],
+          "author": { "@id": "https://nachopuertoportfolio.netlify.app/#person" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Fit-Tracker",
+          "url": "https://fit-tracker.fly.dev/",
+          "description": "Full-stack fitness tracking app: workout routines, nutrition tracking with macro breakdown, progress charts. React + Node.js + MongoDB + Docker.",
+          "codeRepository": "https://github.com/Nachopuerto95/Fittracker",
+          "applicationCategory": "HealthApplication",
+          "programmingLanguage": ["JavaScript", "React", "Node.js", "MongoDB", "Docker"],
+          "author": { "@id": "https://nachopuertoportfolio.netlify.app/#person" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "ft_irc",
+          "description": "Complete IRC server built from scratch in C++98 following RFC 1459. Single-threaded, handles N concurrent clients via poll()-based I/O multiplexing. Non-blocking TCP sockets, per-client buffers, full channel modes. Works with irssi, HexChat, WeeChat.",
+          "codeRepository": "https://github.com/Nachopuerto95/ft_irc",
+          "programmingLanguage": ["C++"],
+          "author": { "@id": "https://nachopuertoportfolio.netlify.app/#person" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Cub3D",
+          "description": "3D ray-casting graphics engine in pure C, inspired by Wolfenstein 3D. DDA algorithm, fish-eye correction, dynamic lighting, wall textures. Built to 42 Madrid norms (no memory leaks, strict coding standard).",
+          "codeRepository": "https://github.com/jpuerto-loruzqui/Cub3D",
+          "programmingLanguage": ["C"],
+          "author": { "@id": "https://nachopuertoportfolio.netlify.app/#person" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Minishell",
+          "description": "Functional UNIX shell interpreter in C. Parses and executes commands, manages processes with fork/execve/wait, handles pipes, redirections, signals and built-ins (echo, cd, pwd, export, unset, env, exit).",
+          "codeRepository": "https://github.com/jpuerto-loruzqui/42Miinishell",
+          "programmingLanguage": ["C"],
+          "author": { "@id": "https://nachopuertoportfolio.netlify.app/#person" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

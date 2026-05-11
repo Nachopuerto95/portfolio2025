@@ -4,9 +4,10 @@
       "web": true,
       "link": "https://ambitious-mushroom-0bfafab10.1.azurestaticapps.net/webtools",
       "git": "",
-      "cover": "/images/placeholder.svg",
+      "cover": "/images/contestaria/dashboard-calls.png",
       "images": [
-        "/images/placeholder.svg",
+        "/images/contestaria/dashboard-calls.png",
+        "/images/contestaria/dashboard-usage.png",
         "/images/contestaria/infra-diagram.svg"
       ],
       "title": {
@@ -91,9 +92,9 @@
       "web": true,
       "link": "https://www.contestaria.com/",
       "git": "",
-      "cover": "/images/placeholder.svg",
+      "cover": "/images/contestaria/landing.png",
       "images": [
-        "/images/placeholder.svg"
+        "/images/contestaria/landing.png"
       ],
       "title": {
         "es": "contestaria.com · Web de producto",
@@ -531,6 +532,7 @@
       "link": "",
       "git": "https://github.com/Nachopuerto95/ft_irc",
       "images": [
+        "/images/low_irc/irc_irssi.png",
         "/images/low_irc/irc_01.png"
       ],
       "caracteristicas": [
